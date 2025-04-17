@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
 import { CTA } from "~/components/CTA";
+import { FeatureCard } from "~/components/feature";
 export default component$(() => {
   return (
     <>
@@ -26,31 +27,39 @@ export default component$(() => {
         <Button text="Get Started" theme="light" link="/app/auth/Login" />
       </section>
       {/* Features section with multiple card ordered in a masionary structure on the left side and picture with features title at the right*/}
-      <section class="xs:[clip-path:ellipse(70%_70%_at_50%_100%)] relative flex flex-row items-center justify-between bg-white p-8 pt-60 sm:[clip-path:ellipse(60%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)]">
-        <div class="z-10 my-auto flex w-full flex-col items-center space-y-4">
-          <h2 class="text-sm ">Features</h2>
-          <div class="flex h-56 flex-col flex-wrap items-center justify-center space-y-4 space-x-4">
-            <div class="rounded-lg bg-white p-4 shadow-md">
-              <h3 class="text-xl font-semibold">Feature 1</h3>
-              <p class="mt-2 text-gray-600">Description of Feature 1.</p>
-            </div>
-            <div class="rounded-lg bg-white p-4 shadow-md">
-              <h3 class="text-xl font-semibold">Feature 2</h3>
-              <p class="mt-2 text-gray-600">Description of Feature 2.</p>
-            </div>
-            <div class="rounded-lg bg-white p-4 shadow-md">
-              <h3 class="text-xl font-semibold">Feature 3</h3>
-              <p class="mt-2 text-gray-600">Description of Feature 3.</p>
-            </div>
+      <section class="relative flex flex-col items-center justify-between">
+        <div class="xs:[clip-path:ellipse(70%_70%_at_50%_100%)] z-10 my-auto flex w-full flex-col items-center space-y-4 bg-white pt-64 sm:[clip-path:ellipse(60%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)]">
+          <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 text-sm">Features</h2>
+          <p class="px-20 py-12 text-center text-3xl overflow-ellipsis md:px-52">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quo?
+            Quia laborum qui reiciendis, corporis voluptatum eum alias mollitia
+            soluta! Ea distinctio laboriosam est incidunt? Et quod in dolor
+            accusamus.
+          </p>
+        </div>
+        <div class="grid w-full grid-flow-row grid-cols-1 grid-rows-3 space-y-4 space-x-10 bg-white px-8 pt-20 pb-40 md:h-[700px] md:grid-cols-3">
+          <div class="col-start-1 row-span-2 row-start-2">
+            <FeatureCard
+              title="Feature 1"
+              description="lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quo? Quia laborum qui reiciendis, corporis voluptatum eum alias mollitia soluta! Ea distinctio laboriosam est incidunt? Et quod in dolor accusamus."
+              imageUrl="https://via.placeholder.com/150"
+            />
+          </div>
+          <div class="col-start-2 row-span-3 row-start-1">
+            <FeatureCard
+              title="Feature 2"
+              description="lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quo? Quia laborum qui reiciendis, corporis voluptatum eum alias mollitia soluta! Ea distinctio laboriosam est incidunt? Et quod in dolor accusamus."
+              imageUrl="https://via.placeholder.com/150"
+            />
+          </div>
+          <div class="col-start-3 row-span-2 row-start-1">
+            <FeatureCard
+              title="Feature 3"
+              description="lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quo? Quia laborum qui reiciendis, corporis voluptatum eum alias mollitia soluta! Ea distinctio laboriosam est incidunt? Et quod in dolor accusamus."
+              imageUrl="https://via.placeholder.com/150"
+            />
           </div>
         </div>
-        <img
-          src="./features.png"
-          alt="Features Image"
-          width={10}
-          height={10}
-          class="absolute top-0 right-0 bottom-0 z-0 h-full w-full rounded-lg object-contain"
-        />
       </section>
       {/* Use cases section with 3 sample use cases if Smart Home automation with IoT  */}
       <section class="flex flex-col items-center justify-center bg-gray-100 p-8">
