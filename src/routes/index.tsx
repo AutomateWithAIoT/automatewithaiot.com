@@ -26,9 +26,9 @@ export default component$(() => {
         <Button text="Get Started" theme="light" link="/app/auth/Login" />
       </section>
       {/* Features section with multiple card ordered in a masionary structure on the left side and picture with features title at the right*/}
-      <section class="relative flex flex-row items-center justify-between bg-white p-8 pt-60 xs:[clip-path:ellipse(70%_70%_at_50%_100%)] sm:[clip-path:ellipse(60%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)]">
+      <section class="xs:[clip-path:ellipse(70%_70%_at_50%_100%)] relative flex flex-row items-center justify-between bg-white p-8 pt-60 sm:[clip-path:ellipse(60%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)]">
         <div class="z-10 my-auto flex w-full flex-col items-center space-y-4">
-          <h2 class="text-3xl font-bold">Features</h2>
+          <h2 class="text-sm ">Features</h2>
           <div class="flex h-56 flex-col flex-wrap items-center justify-center space-y-4 space-x-4">
             <div class="rounded-lg bg-white p-4 shadow-md">
               <h3 class="text-xl font-semibold">Feature 1</h3>
