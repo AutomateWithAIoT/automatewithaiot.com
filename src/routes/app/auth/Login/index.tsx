@@ -1,30 +1,27 @@
 import { component$ } from "@builder.io/qwik";
 import { DocumentHead } from "@builder.io/qwik-city";
+import { Button } from "~/components/button";
+import { ButtonClick } from "~/components/buttonClick";
 
 export const Login = component$(() => {
   return (
     <div>
       <section class="mx-auto mt-12 flex w-full flex-col items-center justify-center rounded-4xl border border-white/30 bg-white/20 p-4 shadow-md backdrop-blur-lg">
         <h4 class="mb-4 text-2xl font-bold">Login</h4>
-        <form class="flex flex-col space-y-4">
+        <form class="flex w-full flex-col items-center justify-center space-y-4">
           <input
             type="email"
             placeholder="Email"
-            class="rounded border p-2"
+            class="rounded-lg border p-2"
             required
           />
           <input
             type="password"
             placeholder="Password"
-            class="rounded border p-2"
+            class="rounded-lg border p-2"
             required
           />
-          <button
-            type="submit"
-            class="mt-6 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
-          >
-            Login
-          </button>
+          <ButtonClick text="Login" theme="dark" />
         </form>
         <p class="mt-4 text-sm">
           Forgot your password?{" "}
