@@ -1,9 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
+import { BlogSection } from "~/components/BlogSection";
 import { Button } from "~/components/button";
 import { CTA } from "~/components/CTA";
 import { FeatureCard } from "~/components/feature";
-import { UseCaseCard } from "~/components/router-head/UseCaseCard";
+import { TestimonialSection } from "~/components/TestimonialSection";
+import { UseCaseCard } from "~/components/UseCaseCard";
 export default component$(() => {
   return (
     <>
@@ -90,6 +92,26 @@ export default component$(() => {
               imageUrl="https://via.placeholder.com/150"
             />
           </div>
+        </div>
+      </section>
+      <section class="flex flex-col items-center justify-center">
+        <div class="xs:[clip-path:ellipse(70%_70%_at_50%_100%)] z-10 my-auto flex w-full flex-col items-center space-y-4 bg-white pt-64 sm:[clip-path:ellipse(60%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)]">
+          <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 text-sm">
+            What's New
+          </h2>
+        </div>
+        <div class="w-full bg-white px-8 pt-20 pb-40 md:h-[700px]">
+          <BlogSection />
+        </div>
+      </section>
+      <section class="flex flex-col items-center justify-center bg-white">
+        <div class="xs:[clip-path:ellipse(70%_70%_at_50%_100%)] z-10 my-auto flex w-full flex-col items-center space-y-4 bg-emerald-50 pt-64 sm:[clip-path:ellipse(60%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)]">
+          <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 text-sm">
+            What our clients say
+          </h2>
+        </div>
+        <div class="w-full bg-emerald-50 px-8 pt-20 pb-40 md:h-[700px]">
+          <TestimonialSection />
         </div>
       </section>
       {/* FAQ section with accordtion */}
