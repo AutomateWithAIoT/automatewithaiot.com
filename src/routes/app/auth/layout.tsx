@@ -3,16 +3,16 @@ import { component$, Slot } from "@builder.io/qwik";
 export default component$(() => {
   return (
     <>
-      <section class="flex min-h-screen w-1/3 min-w-md flex-col items-center justify-center bg-gray-100">
-        <Slot />
+      <section class="mx-auto mt-32 mb-12 flex w-1/3 min-w-md flex-col justify-center rounded-4xl bg-white bg-linear-to-b from-emerald-50 to-emerald-200 p-12 shadow-md">
         <div>
-          <h4 class="mb-4 text-2xl font-bold">
+          <h4 class="mb-4 text-center text-2xl font-bold">
             Welcome to Smart Home Solution
           </h4>
-          <p class="mt-4 text-lg">
+          <p class="mt-4">
             Experience the future of home automation with AI-powered features.
           </p>
         </div>
+        <Slot />
       </section>
     </>
   );

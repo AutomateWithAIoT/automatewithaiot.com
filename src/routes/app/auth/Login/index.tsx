@@ -4,13 +4,7 @@ import { DocumentHead } from "@builder.io/qwik-city";
 export const Login = component$(() => {
   return (
     <div>
-      <section class="flex min-h-screen w-1/3 min-w-md flex-col items-center justify-center bg-gray-100">
-        <h4 class="mb-4 text-2xl font-bold">Welcome to Smart Home Solution</h4>
-        <p class="mt-4 text-lg">
-          Experience the future of home automation with AI-powered features.
-        </p>
-      </section>
-      <section class="flex min-h-screen w-1/3 min-w-md flex-col items-center justify-center bg-gray-100">
+      <section class="mx-auto mt-12 flex w-full flex-col items-center justify-center rounded-4xl border border-white/30 bg-white/20 p-4 shadow-md backdrop-blur-lg">
         <h4 class="mb-4 text-2xl font-bold">Login</h4>
         <form class="flex flex-col space-y-4">
           <input
