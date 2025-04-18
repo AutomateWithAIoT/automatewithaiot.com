@@ -39,22 +39,22 @@ export default component$(() => {
             accusamus.
           </p>
         </div>
-        <div class="grid w-full grid-flow-row grid-cols-1 grid-rows-5 space-y-4 space-x-10 bg-white px-8 pt-20 pb-40 md:h-[700px] md:grid-cols-3">
-          <div class="col-start-1 row-span-4 row-start-1">
+        <div class="grid h-[1000px] w-full grid-cols-1 grid-rows-12 space-y-4 bg-white px-8 pt-20 pb-40 md:h-[700px] md:grid-cols-3 md:grid-rows-5 md:space-x-10">
+          <div class="row-span-4 row-start-1 md:col-start-1 md:row-span-4 md:row-start-1">
             <FeatureCard
               title="Feature 1"
               description="lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quo? Quia laborum qui reiciendis, corporis voluptatum eum alias mollitia soluta! Ea distinctio laboriosam est incidunt? Et quod in dolor accusamus."
               imageUrl="https://via.placeholder.com/150"
             />
           </div>
-          <div class="col-start-2 row-span-5 row-start-1">
+          <div class="row-span-4 row-start-5 md:col-start-2 md:row-span-5 md:row-start-1">
             <FeatureCard
               title="Feature 2"
               description="lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quo? Quia laborum qui reiciendis, corporis voluptatum eum alias mollitia soluta! Ea distinctio laboriosam est incidunt? Et quod in dolor accusamus."
               imageUrl="https://via.placeholder.com/150"
             />
           </div>
-          <div class="col-start-3 row-span-3 row-start-3">
+          <div class="row-span-4 row-start-9 md:col-start-3 md:row-span-3 md:row-start-3">
             <FeatureCard
               title="Feature 3"
               description="lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quo? Quia laborum qui reiciendis, corporis voluptatum eum alias mollitia soluta! Ea distinctio laboriosam est incidunt? Et quod in dolor accusamus."
@@ -74,7 +74,7 @@ export default component$(() => {
             Quia laborum qui reiciendis,
           </p>
         </div>
-        <div class="grid w-full grid-flow-row grid-cols-1 space-y-4 space-x-10 bg-emerald-50 px-8 pt-20 pb-40 sm:grid-cols-2 md:h-[700px]">
+        <div class="grid w-full grid-flow-row grid-cols-1 space-y-4 bg-emerald-50 px-8 pt-20 pb-40 sm:grid-cols-2 md:h-[700px] md:space-y-0 md:space-x-10">
           <div>
             <UseCaseCard
               title="Use Case 1"

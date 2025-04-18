@@ -1,4 +1,5 @@
 import { component$, useSignal, useTask$ } from "@builder.io/qwik";
+import { Button } from "./button";
 
 interface Blog {
   title: string;
@@ -71,8 +72,8 @@ export const BlogSection = component$(() => {
         alt={currentBlog.value?.title}
         class="absolute top-0 left-0 z-0 h-full w-full object-cover"
       />
-      <div class="relative bottom-0 left-0 z-10 flex w-9/12 flex-row justify-around space-x-4">
-        <div class="flex max-w-6/12 flex-col gap-2">
+      <div class="relative bottom-0 left-0 z-10 flex w-9/12 flex-col justify-around space-x-4 md:flex-row">
+        <div class="flex max-w-full flex-col gap-2 md:max-w-6/12">
           <div class="flex flex-row gap-2">
             {currentBlog.value?.tags.split(",").map((tag, index) => (
               <div key={index} class="w-fit rounded-full border px-4 py-2">
@@ -82,13 +83,18 @@ export const BlogSection = component$(() => {
           </div>
           <h2 class="text-xl font-semibold">{currentBlog.value?.title}</h2>
         </div>
-        <div class="flex max-w-5/12 flex-col gap-2">
+        <div class="flex max-w-full md:max-w-5/12 items-start flex-col gap-2">
           <p class="text-sm text-black">
             {currentBlog.value?.content.slice(0, 200)}...
           </p>
-          <button>
+          <Button
+            text="Read More"
+            link={`/blogs/${currentBlog.value?.id}`}
+            theme="dark"
+          />
+          {/* <button>
             <a href={`/blogs/${currentBlog.value?.id}`}>Read More</a>
-          </button>
+          </button> */}
         </div>
       </div>
       <div

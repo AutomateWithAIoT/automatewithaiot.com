@@ -78,7 +78,7 @@ export const TestimonialSection = component$(() => {
           return (
             <div
               key={testimonial.name}
-              class={`${currentTestimonial.value?.name === testimonial.name ? "col-span-2 row-span-2 md:col-span-3 lg:col-span-2" : ""} flex items-center justify-center`}
+              class={`${currentTestimonial.value?.name === testimonial.name ? "col-span-2 row-span-2 md:col-span-3 lg:col-span-2" : ""} `}
             >
               {
                 <Testimonial

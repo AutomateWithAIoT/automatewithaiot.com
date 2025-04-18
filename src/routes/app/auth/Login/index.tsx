@@ -1,6 +1,5 @@
 import { component$ } from "@builder.io/qwik";
 import { DocumentHead } from "@builder.io/qwik-city";
-import { Button } from "~/components/button";
 import { ButtonClick } from "~/components/buttonClick";
 
 export const Login = component$(() => {
