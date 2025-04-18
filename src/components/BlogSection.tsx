@@ -53,7 +53,7 @@ export const BlogSection = component$(() => {
     currentBlog.value = blogs.value[currentIndex.value]; // Set initial blog
 
     try {
-      const response = await fetch("blogs/recent/");
+      const response = await fetch("/api/blogs");
       const data: Blog[] = await response.json();
 
       if (data.length > 0) {

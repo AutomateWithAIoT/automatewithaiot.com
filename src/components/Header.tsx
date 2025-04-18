@@ -16,7 +16,7 @@ export const Header = component$(() => {
   );
 
   return (
-    <header class="fixed top-0 z-20 flex w-full items-center justify-between bg-emerald-50 p-4 text-neutral-950 px-8 py-5">
+    <header class="fixed top-0 z-30 flex w-full max-w-7xl items-center justify-between bg-emerald-50 p-4 px-8 py-5 text-neutral-950">
       {scorllTop.value && (
         <div class="flex items-center space-x-4">
           <img src="/logo.png" alt="Logo" class="h-8 w-8" />

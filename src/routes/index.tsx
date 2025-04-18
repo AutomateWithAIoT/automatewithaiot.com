@@ -2,7 +2,6 @@ import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 import { BlogSection } from "~/components/BlogSection";
 import { Button } from "~/components/button";
-import { CTA } from "~/components/CTA";
 import { FeatureCard } from "~/components/feature";
 import { TestimonialSection } from "~/components/TestimonialSection";
 import { UseCaseCard } from "~/components/UseCaseCard";
@@ -31,7 +30,7 @@ export default component$(() => {
       </section>
       {/* Features section with multiple card ordered in a masionary structure on the left side and picture with features title at the right*/}
       <section class="relative flex flex-col items-center justify-between">
-        <div class="xs:[clip-path:ellipse(70%_70%_at_50%_100%)] z-10 my-auto flex w-full flex-col items-center space-y-4 bg-white pt-64 sm:[clip-path:ellipse(60%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)]">
+        <div class="xs:[clip-path:ellipse(70%_70%_at_50%_100%)] z-10 my-auto flex w-full flex-col items-center space-y-4 bg-white pt-64 sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)]">
           <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 text-sm">Features</h2>
           <p class="px-20 py-12 text-center text-3xl overflow-ellipsis md:px-52">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quo?
@@ -66,7 +65,7 @@ export default component$(() => {
       </section>
       {/* Use cases section with 3 sample use cases if Smart Home automation with IoT  */}
       <section class="flex flex-col items-center justify-center bg-white">
-        <div class="xs:[clip-path:ellipse(70%_70%_at_50%_100%)] z-10 my-auto flex w-full flex-col items-center space-y-4 bg-emerald-50 pt-64 sm:[clip-path:ellipse(60%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)]">
+        <div class="xs:[clip-path:ellipse(70%_70%_at_50%_100%)] z-10 my-auto flex w-full flex-col items-center space-y-4 bg-emerald-50 pt-64 sm:[clip-path:ellipse(60%_80%_at_50%_100%)] md:[clip-path:ellipse(55%_80%_at_50%_100%)]">
           <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 text-sm">
             Why Choose Us
           </h2>
@@ -95,7 +94,7 @@ export default component$(() => {
         </div>
       </section>
       <section class="flex flex-col items-center justify-center">
-        <div class="xs:[clip-path:ellipse(70%_70%_at_50%_100%)] z-10 my-auto flex w-full flex-col items-center space-y-4 bg-white pt-64 sm:[clip-path:ellipse(60%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)]">
+        <div class="xs:[clip-path:ellipse(70%_70%_at_50%_100%)] z-10 my-auto flex w-full flex-col items-center space-y-4 bg-white pt-64 sm:[clip-path:ellipse(60%_80%_at_50%_100%)] md:[clip-path:ellipse(55%_80%_at_50%_100%)]">
           <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 text-sm">
             What's New
           </h2>
@@ -105,7 +104,7 @@ export default component$(() => {
         </div>
       </section>
       <section class="flex flex-col items-center justify-center bg-white">
-        <div class="xs:[clip-path:ellipse(70%_70%_at_50%_100%)] z-10 my-auto flex w-full flex-col items-center space-y-4 bg-emerald-50 pt-64 sm:[clip-path:ellipse(60%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)]">
+        <div class="xs:[clip-path:ellipse(70%_70%_at_50%_100%)] z-10 my-auto flex w-full flex-col items-center space-y-4 bg-emerald-50 pt-64 sm:[clip-path:ellipse(60%_80%_at_50%_100%)] md:[clip-path:ellipse(55%_80%_at_50%_100%)]">
           <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 text-sm">
             What our clients say
           </h2>
@@ -114,25 +113,6 @@ export default component$(() => {
           <TestimonialSection />
         </div>
       </section>
-      {/* FAQ section with accordtion */}
-      <section class="flex flex-col items-center justify-center bg-gray-200 p-8">
-        <h2 class="mb-4 text-3xl font-bold">Frequently Asked Questions</h2>
-        <div class="accordion w-full max-w-md">
-          <div class="accordion-item">
-            <input type="checkbox" id="faq1" class="accordion-toggle" />
-            <label for="faq1" class="accordion-label">
-              What is Smart Home Automation?
-            </label>
-            <div class="accordion-content">
-              Smart home automation refers to the use of technology to control
-              and automate various household functions, such as lighting,
-              heating, security, and appliances.
-            </div>
-          </div>
-          {/* Add more FAQ items here */}
-        </div>
-      </section>
-      <CTA />
     </>
   );
 });

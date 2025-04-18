@@ -71,9 +71,9 @@ export const TestimonialSection = component$(() => {
   });
 
   return (
-    <div class="flex flex-col items-center justify-center bg-gray-50 p-4">
+    <div class="flex flex-col items-center justify-center bg-emerald-50 p-4">
       <h2 class="mb-4 text-2xl font-bold">What Our Clients Say</h2>
-      <div class="grid grid-cols-2 grid-rows-4 space-y-4 space-x-4 sm:grid-cols-3 sm:grid-rows-3 md:grid-cols-5 md:grid-rows-3 lg:grid-cols-7 lg:grid-rows-2 select-none">
+      <div class="grid grid-cols-2 grid-rows-4 space-y-4 space-x-4 sm:grid-cols-3 sm:grid-rows-3 md:grid-cols-5 md:grid-rows-3 lg:grid-cols-7 lg:grid-rows-1 select-none">
         {testimonials.value.map((testimonial) => {
           return (
             <div

@@ -29,7 +29,7 @@ export default component$(() => {
         )}
         <RouterHead />
       </head>
-      <body lang="en" class="bg-emerald-50">
+      <body lang="en" class="mx-auto max-w-7xl overflow-visible bg-emerald-50">
         <RouterOutlet />
         {!isDev && <ServiceWorkerRegister />}
       </body>

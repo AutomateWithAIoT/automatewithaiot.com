@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
 
 interface TestimonialProps {
   name: string;
@@ -14,12 +14,31 @@ interface TestimonialProps {
 }
 
 export const Testimonial = component$<TestimonialProps>((props) => {
+  const styleList = [
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900",
+  ];
+
+  const color = useSignal(
+    styleList[Math.floor(Math.random() * styleList.length)],
+  );
+  const textColor = Number(color.value) < 600 ? "950" : "50";
+  const textColor2 = Number(color.value) < 600 ? "black" : "white";
   return (
-    <div class="items-scratch relative flex flex-row justify-center rounded-lg bg-gray-100 p-4 shadow-md">
+    <div
+      class={`items-scratch relative flex flex-row justify-center rounded-lg bg-emerald-${color.value} p-4 shadow-md`}
+    >
       <div>
         {props.prevButton === "visible" && props.state === "expanded" ? (
           <button
-            class="absolute top-0 left-0 z-10 m-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-black"
+            class="absolute top-0 left-0 z-10 m-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-950"
             onClick$={props.prevButtonAction}
           >
             <i class="material-icons text-emerald-50">arrow_back</i>
@@ -39,9 +58,11 @@ export const Testimonial = component$<TestimonialProps>((props) => {
         />
         {props.state === "expanded" && (
           <div>
-            <p class="mt-2 text-gray-700">{props.testimonial}</p>
-            <h3 class="text-lg font-semibold">{props.name}</h3>
-            <p class="text-sm text-gray-500">
+            <p class={`t-2 text-emerald-${textColor}`}>{props.testimonial}</p>
+            <h3 class={`text-lg font-semibold text-${textColor2}`}>
+              {props.name}
+            </h3>
+            <p class={`text-sm text-${textColor2}`}>
               {props.position} at {props.company ? props.company : ""}
             </p>
           </div>
