@@ -1,36 +1,30 @@
 import { component$ } from "@builder.io/qwik";
 import { DocumentHead } from "@builder.io/qwik-city";
+import { ButtonClick } from "~/components/buttonClick";
 
 export const Signup = component$(() => {
   return (
     <>
-      <section class="flex min-h-screen w-1/3 min-w-md flex-col items-center justify-center bg-gray-100">
-        <h4 class="mb-4 text-2xl font-bold">Welcome to Smart Home Solution</h4>
-        <p class="mt-4 text-lg">
-          Experience the future of home automation with AI-powered features.
-        </p>
-      </section>
-      <div class="flex min-h-screen flex-col items-center justify-center bg-gray-100">
+      <div class="mx-auto mt-12 flex w-full flex-col items-center justify-center rounded-4xl border border-white/30 bg-white/20 p-4 shadow-md backdrop-blur-lg">
         <h1 class="mb-4 text-4xl font-bold">Signup</h1>
-        <form class="w-full max-w-sm space-y-4">
+        <form class="flex w-full flex-col items-center justify-center space-y-4">
           <input
             type="text"
             placeholder="Username"
-            class="w-full rounded border px-4 py-2"
+            class="w-full rounded-lg border px-4 py-2"
           />
           <input
             type="email"
             placeholder="Email"
-            class="w-full rounded border px-4 py-2"
+            class="w-full rounded-lg border px-4 py-2"
           />
           <input
             type="password"
             placeholder="Password"
-            class="w-full rounded border px-4 py-2"
+            class="w-full rounded-lg border px-4 py-2"
           />
-          <button class="w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
-            Signup
-          </button>
+
+          <ButtonClick text="Signup" theme="dark" />
         </form>
         <p class="mt-4 text-sm">
           Already have an account?{" "}
