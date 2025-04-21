@@ -8,25 +8,59 @@ import { UseCaseCard } from "~/components/UseCaseCard";
 export default component$(() => {
   return (
     <>
-      <section class="relative mx-8 mt-24 flex min-h-screen flex-col items-center justify-start overflow-clip rounded-[55px] bg-gray-900 pt-32">
-        <img
-          // eslint-disable-next-line qwik/jsx-img
-          src="/hero.jpg"
-          alt="Hero Image"
-          width={1000}
-          height={1000}
-          class="absolute top-0 right-0 bottom-0 left-0 z-10 h-full w-full object-cover opacity-50"
-        />
-        <h1 class="z-20 mb-4 text-center font-sans text-7xl font-bold text-emerald-50">
+      <section class="mx-8 mt-24 flex min-h-screen flex-col items-center justify-start overflow-clip rounded-[55px] pt-32">
+        <div class="flex items-center space-x-2 rounded-full border border-emerald-700 px-3 py-1">
+          <div class="flex flex-row justify-center space-x-[-5px]">
+            <img
+              src="/testimonials/user-1.jpg"
+              alt=""
+              class="h-8 w-8 rounded-full"
+            />
+            <img
+              src="/testimonials/user-2.jpg"
+              alt=""
+              class="h-8 w-8 rounded-full"
+            />
+            <img
+              src="/testimonials/user-3.jpg"
+              alt=""
+              class="h-8 w-8 rounded-full"
+            />
+          </div>
+          <p>Loved by users across the world</p>
+        </div>
+        <h1 class="z-20 mb-4 text-center font-sans text-7xl font-light text-emerald-950">
           AI powered Smart Home Solution
         </h1>
-        <p class="z-20 mt-4 text-lg text-emerald-50">
-          Welcome to our Smart Home Solution!
-        </p>
-        <p class="z-20 mt-2 pb-8 text-lg text-emerald-50">
-          Experience the future of home automation with AI-powered features.
-        </p>
-        <Button text="Get Started" theme="light" link="/app/auth/Login" />
+        <div class="my-12 flex items-center justify-center space-x-4">
+          <Button text="Get Started" theme="dark" link="/app/dashboard/" />
+          <Button text="Contact us" theme="light" link="/contact" />
+        </div>
+        <div class="relative flex flex-col space-y-12 sm:block">
+          <div class="top-0 bottom-0 left-0 z-10 flex h-1/2 max-h-80 w-full flex-col items-start justify-around space-y-4 rounded-4xl bg-white p-4 text-emerald-950 sm:absolute sm:my-auto sm:w-64">
+            <img src="hero-icon.png" alt="icon" />
+            <h2 class="text-2xl font-semibold">
+              Welcome to our Smart Home Solution!
+            </h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos
+              veniam vitae neque voluptatibus
+            </p>
+          </div>
+          <img
+            // eslint-disable-next-line qwik/jsx-img
+            src="/hero.jpg"
+            alt="Hero Image"
+            width={1000}
+            height={1000}
+            class="z-0 mx-auto w-full rounded-xl object-cover sm:h-[800px] sm:w-4/5"
+          />
+          <div class="right-0 z-10 flex h-1/2 max-h-80 w-full flex-col items-start justify-around space-y-4 rounded-4xl bg-white p-4 text-emerald-950 sm:absolute sm:top-0 sm:bottom-0 sm:my-auto sm:mt-96 sm:w-64">
+            <h2 class="text-2xl font-semibold">Welcome to our Smart</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit</p>
+            <img src="hero-icon.png" alt="icon" />
+          </div>
+        </div>
       </section>
       {/* Features section with multiple card ordered in a masionary structure on the left side and picture with features title at the right*/}
       <section class="relative flex flex-col items-center justify-between">
