@@ -28,7 +28,7 @@ export const Footer = component$(() => {
               <Link href="/#features">Features</Link>
             </li>
             <li class="hover:text-emerald-500">
-              <Link href="/blog/1">Blog</Link>
+              <Link href="/blogs/1">Blog</Link>
             </li>
             <li class="hover:text-emerald-500">
               <Link href="/contact">Contact Us</Link>
