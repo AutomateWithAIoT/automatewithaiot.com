@@ -33,12 +33,13 @@ export const Header = component$(() => {
     <header class='fixed top-0 z-30 flex w-full max-w-[1440px] items-center justify-between bg-emerald-50 p-4 px-8 py-5 mx-auto text-neutral-950'>
       {scorllTop.value && (
         <div class='flex items-center space-x-4'>
-          <img src='/logo.png' alt='Logo' class='h-8 w-8' />
+          {/* eslint-disable-next-line qwik/jsx-img */}
+          <img src='/logo-light.png' alt='Logo' class='h-12 w-auto' />
         </div>
       )}
       {!scorllTop.value && (
         <h1 class='text-2xl font-bold underline underline-offset-8 select-none'>
-          My Qwik App
+          AutomateWithAIoT
         </h1>
       )}
       <nav>

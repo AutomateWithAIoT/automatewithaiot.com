@@ -163,7 +163,8 @@ export const Sidebar = component$(() => {
           class={`flex items-center ${isCollapsed.value ? "w-full justify-center" : ""}`}
         >
           <div class="text-emerald-600 dark:text-emerald-400">
-            <svg
+            <img src="/favicon.png" alt="Logo" class="w-12" />
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-8 w-8"
               fill="none"
@@ -176,7 +177,7 @@ export const Sidebar = component$(() => {
                 stroke-Width="2"
                 d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
               />
-            </svg>
+            </svg> */}
           </div>
           {!isCollapsed.value && (
             <span class="ml-2 text-lg font-semibold text-gray-800 dark:text-white">
