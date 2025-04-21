@@ -6,10 +6,13 @@ import { ButtonClick } from "~/components/buttonClick";
 export const forgotPassword = component$(() => {
   const email = useSignal("");
   const message = useSignal<string | null>(null);
+  const btnStatus = useSignal(true);
 
   const handleSendResetLink = $(async () => {
     try {
+      btnStatus.value = false;
       await sendResetPasswordEmail(email.value);
+      btnStatus.value = true;
       message.value = "Password reset link sent!";
     } catch (err: any) {
       message.value = err.message;
@@ -30,7 +33,7 @@ export const forgotPassword = component$(() => {
           required
           bind:value={email}
         />
-        <ButtonClick text="Send Reset Link" theme="dark" onClick={handleSendResetLink} />
+        <ButtonClick text="Send Reset Link" theme="dark" onClick={handleSendResetLink} status={btnStatus.value} />
         {message.value && <>
         <p class="text-emerald-500">{message.value}</p>
         <a href="/app/auth/Login" class="text-blue-500 hover:underline">Go back to Login</a></>}

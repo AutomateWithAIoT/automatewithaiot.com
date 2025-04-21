@@ -9,6 +9,7 @@ export const Signup = component$(() => {
   const password = useSignal("");
   const confirmPassword = useSignal("");
   const error = useSignal<string | null>(null);
+  const buttonAvailability = useSignal(true);
 
   const handleSignup = $(async () => {
 
@@ -17,7 +18,9 @@ export const Signup = component$(() => {
     } else if (password.value !== confirmPassword.value) {
       error.value = "Passwords do not match";
     } else {
+        buttonAvailability.value = false;
         const response = await signUpWithEmail(email.value, password.value,username.value);
+        buttonAvailability.value = true;
         if (response.success){
           location.href = "/app/auth/Login";
         }else{
@@ -33,17 +36,17 @@ export const Signup = component$(() => {
       <div class="mx-auto mt-12 flex w-full flex-col items-center justify-center rounded-4xl border border-white/30 bg-white/20 p-4 shadow-md backdrop-blur-lg">
         <h1 class="mb-4 text-4xl font-bold">Signup</h1>
         <form class="flex w-full flex-col items-center justify-center space-y-4">
-          <input 
-          type="text"
-          placeholder="Username"
-          class="w-full rounded-lg border px-4 py-2"
-           bind:value={username}
-          />
           <input
             type="email"
             placeholder="Email"
             class="w-full rounded-lg border px-4 py-2"
             bind:value={email}
+          />
+          <input 
+          type="text"
+          placeholder="Username"
+          class="w-full rounded-lg border px-4 py-2"
+           bind:value={username}
           />
           
           <input
@@ -59,8 +62,8 @@ export const Signup = component$(() => {
             bind:value={confirmPassword}
           />
           {error.value && <p class="text-red-500">{error.value}</p>}
-
-          <ButtonClick text="Signup" theme="dark" onClick={handleSignup} />
+          {!buttonAvailability.value && <p class="text-emerald-500">Loading...</p>}
+          {buttonAvailability.value && <ButtonClick text="Signup" theme="dark" onClick={handleSignup} />}
         </form>
         <p class="mt-4 text-sm">
           Already have an account?{" "}

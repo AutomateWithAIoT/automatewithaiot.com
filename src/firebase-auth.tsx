@@ -17,11 +17,12 @@ import { getFirestore,doc,setDoc,getDoc } from "firebase/firestore";
   // Email/Password Authentication
   export const loginWithEmail = $(async (email: string, password: string,) => {
     try{
-        const userRef = doc(db,"users",email);
-        const user = await getDoc(userRef);
-        if (user.exists()) {
-            signInWithEmailAndPassword(auth, email, password);
-            return ({ "success":true,"user":user.data()})
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        const userRef = doc(db,"users",user.uid);
+        const userSnap = await getDoc(userRef);
+        if (userSnap.exists()) {
+            return ({ "success":true,"user":userSnap.data()})
         }else{
             return ({ "success":false,"error":"User not found"})
         }
@@ -41,7 +42,7 @@ import { getFirestore,doc,setDoc,getDoc } from "firebase/firestore";
         await setDoc(doc(db, "users", user.uid), {
             email: user.email,
             username: username,
-            uid: user.uid,
+            userId: user.uid,
             role: "user",
             createdAt: new Date(),
         })

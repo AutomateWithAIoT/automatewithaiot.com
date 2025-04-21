@@ -1,8 +1,22 @@
-import { $, component$, useOnDocument, useSignal } from "@builder.io/qwik";
+import { $, component$, useOnDocument, useSignal, useStore, useVisibleTask$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 
 export const Header = component$(() => {
   const scorllTop = useSignal(false);
+  const LoginStatus = useStore({
+    isLoggedIn: false,
+    username: "",
+  });
+  useVisibleTask$(
+    () => {
+      const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+      if (isLoggedIn) {
+        LoginStatus.isLoggedIn = true;
+        LoginStatus.username = sessionStorage.getItem("username") || "";
+      }
+    })
+  
+
   useOnDocument(
     "scroll",
     $(() => {
@@ -46,11 +60,17 @@ export const Header = component$(() => {
           </li>
         </ul>
       </nav>
+      {LoginStatus.isLoggedIn && (
+        <div class='flex items-center space-x-4'>
+          <p>Welcome back!</p>
+          <p>{LoginStatus.username}</p>
+          </div>
+      )}
       <Link
-        href='/app/auth/Login'
+        href={`${LoginStatus.isLoggedIn ? '/app/dashboard' : '/app/auth/Login'}`}
         class='rounded-full border-2 border-emerald-950 bg-emerald-950 px-14 py-3 text-neutral-50 transition-colors duration-300 hover:bg-neutral-50 hover:text-emerald-950'
       >
-        Login
+        {LoginStatus.isLoggedIn ? "Dashboard" : "Login"}
       </Link>
     </header>
   );
