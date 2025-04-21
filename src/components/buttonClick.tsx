@@ -8,7 +8,7 @@ interface ButtonProps {
 
 export const ButtonClick = component$<ButtonProps>((props) => {
   return (
-    <button
+    <button type="button"
       class={
         "z-20 cursor-pointer rounded-full border-2 px-12 py-4 transition-colors duration-300 " +
         (props.theme === "dark"
