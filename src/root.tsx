@@ -5,7 +5,6 @@ import {
   ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
-import { isDev } from "@builder.io/qwik";
 
 import "./global.css";
 
@@ -16,20 +15,21 @@ export default component$(() => {
    *
    * Don't remove the `<head>` and `<body>` elements.
    */
+  const isDev = import.meta.env.DEV;
 
   return (
     <QwikCityProvider>
       <head>
-        <meta charset="utf-8" />
+        <meta charSet='utf-8' />
         {!isDev && (
           <link
-            rel="manifest"
+            rel='manifest'
             href={`${import.meta.env.BASE_URL}manifest.json`}
           />
         )}
         <RouterHead />
       </head>
-      <body lang="en" class="mx-auto max-w-7xl overflow-visible bg-emerald-50">
+      <body lang='en' class='bg-emerald-50'>
         <RouterOutlet />
         {!isDev && <ServiceWorkerRegister />}
       </body>
