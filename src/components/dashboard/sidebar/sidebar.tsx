@@ -1,7 +1,39 @@
-import { component$, useSignal, $ } from "@builder.io/qwik";
+import {
+  component$,
+  useSignal,
+  $,
+  useStore,
+  useVisibleTask$,
+} from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
 
 export const Sidebar = component$(() => {
+  const user = useStore({
+    name: "Alex Johnson",
+    email: "alex.johnson@example.com",
+    role: "User",
+    notifications: {
+      email: true,
+      push: true,
+      sms: false,
+    },
+    theme: "light",
+  });
+  useVisibleTask$(() => {
+    user.name = sessionStorage.getItem("name") || "Alex Johnson";
+    user.email = sessionStorage.getItem("email") || "alex.johnson@example.com";
+    user.role = sessionStorage.getItem("role") || "User";
+    user.notifications = JSON.parse(
+      sessionStorage.getItem("notifications") ||
+        JSON.stringify({
+          email: true,
+          push: true,
+          sms: false,
+        }),
+    );
+    user.theme = sessionStorage.getItem("theme") || "light";
+  });
+
   const location = useLocation();
   const isCollapsed = useSignal(false);
 
@@ -212,10 +244,10 @@ export const Sidebar = component$(() => {
           {!isCollapsed.value && (
             <div class="ml-3">
               <p class="text-sm font-medium text-gray-800 dark:text-white">
-                Alex Johnson
+                {user.name}
               </p>
               <p class="text-xs text-gray-500 dark:text-gray-400">
-                Administrator
+                {user.email}
               </p>
             </div>
           )}

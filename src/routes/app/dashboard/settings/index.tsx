@@ -1,22 +1,35 @@
-import { component$, useSignal, useStore, $ } from "@builder.io/qwik"
+import { component$, useSignal, useStore, $, useVisibleTask$ } from "@builder.io/qwik"
 
 export default component$(() => {
   const user = useStore({
     name: "Alex Johnson",
     email: "alex.johnson@example.com",
-    role: "Administrator",
+    role: "User",
     notifications: {
       email: true,
       push: true,
       sms: false,
     },
-    theme: "light",
+    theme: "dark",
+  })
+  useVisibleTask$(() => {
+    user.name = sessionStorage.getItem("name") || user.name
+    user.email = sessionStorage.getItem("email") || user.email
+    user.role = sessionStorage.getItem("role") || user.role
+    user.notifications = JSON.parse(sessionStorage.getItem("notifications") || JSON.stringify(user.notifications))
+    user.theme = sessionStorage.getItem("theme") || user.theme
   })
 
   const isSaving = useSignal(false)
   const showSuccess = useSignal(false)
 
   const saveSettings = $(async () => {
+    sessionStorage.setItem("name", user.name)
+    sessionStorage.setItem("email", user.email)
+    sessionStorage.setItem("role", user.role)
+    sessionStorage.setItem("notifications", JSON.stringify(user.notifications))
+    sessionStorage.setItem("theme", user.theme)
+
     isSaving.value = true
 
     // Simulate API call
@@ -49,7 +62,7 @@ export default component$(() => {
               <input
                 type="text"
                 value={user.name}
-                onChange$={(e) => (user.name = e.target.value)}
+                onChange$={(e) => (user.name = (e.target as HTMLInputElement).value)}
                 class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white"
               />
             </div>
@@ -58,8 +71,8 @@ export default component$(() => {
               <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
               <input
                 type="email"
-                value={user.email}
-                onChange$={(e) => (user.email = e.target.value)}
+                value={user.email}         
+                onChange$={(e) => (user.email = (e.target as HTMLInputElement).value)}
                 class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white"
               />
             </div>
@@ -67,8 +80,8 @@ export default component$(() => {
             <div>
               <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Role</label>
               <select
-                value={user.role}
-                onChange$={(e) => (user.role = e.target.value)}
+                value={user.role}          
+                onChange$={(e) => (user.role = (e.target as HTMLInputElement).value)}
                 class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white"
               >
                 <option value="Administrator">Administrator</option>
