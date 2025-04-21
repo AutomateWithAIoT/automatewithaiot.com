@@ -1,7 +1,39 @@
-import { component$, useSignal, $ } from "@builder.io/qwik";
+import {
+  component$,
+  useSignal,
+  $,
+  useVisibleTask$,
+  useStore,
+} from "@builder.io/qwik";
 import { mockAlerts } from "~/data/mock-alerts";
 
 export const Navbar = component$(() => {
+  const user = useStore({
+    name: "Alex Johnson",
+    email: "alex.johnson@example.com",
+    role: "User",
+    notifications: {
+      email: true,
+      push: true,
+      sms: false,
+    },
+    theme: "light",
+  });
+  useVisibleTask$(() => {
+    user.name = sessionStorage.getItem("name") || "Alex Johnson";
+    user.email = sessionStorage.getItem("email") || "alex.johnson@example.com";
+    user.role = sessionStorage.getItem("role") || "User";
+    user.notifications = JSON.parse(
+      sessionStorage.getItem("notifications") ||
+        JSON.stringify({
+          email: true,
+          push: true,
+          sms: false,
+        }),
+    );
+    user.theme = sessionStorage.getItem("theme") || "light";
+  });
+
   const isNotificationsOpen = useSignal(false);
   const isProfileOpen = useSignal(false);
   const unreadNotifications = useSignal(
@@ -157,7 +189,7 @@ export const Navbar = component$(() => {
               class="h-8 w-8 rounded-full"
             />
             <span class="ml-2 hidden text-sm font-medium text-gray-700 md:block dark:text-gray-300">
-              Alex Johnson
+              {user.name}
             </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -179,10 +211,10 @@ export const Navbar = component$(() => {
             <div class="absolute right-0 z-10 mt-2 w-48 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800">
               <div class="border-b border-gray-200 p-3 dark:border-gray-700">
                 <p class="text-sm font-medium text-gray-800 dark:text-white">
-                  Alex Johnson
+                  {user.name}
                 </p>
                 <p class="text-xs text-gray-500 dark:text-gray-400">
-                  alex.johnson@example.com
+                  {user.email}
                 </p>
               </div>
               <div class="py-1">
@@ -198,12 +230,15 @@ export const Navbar = component$(() => {
                 >
                   Help & Support
                 </a>
-                <a
-                  href="/"
-                  class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:text-red-400 dark:hover:bg-gray-700"
+                <button
+                  onClick$={() => {
+                    sessionStorage.clear();
+                    location.href = "/app/auth/Login";
+                  }}
+                  class="block w-full px-4 py-2 text-left text-sm text-red-600 hover:bg-gray-100 dark:text-red-400 dark:hover:bg-gray-700"
                 >
                   Sign out
-                </a>
+                </button>
               </div>
             </div>
           )}
