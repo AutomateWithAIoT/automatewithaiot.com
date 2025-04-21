@@ -17,10 +17,13 @@ export const Login = component$(() => {
   const password = useSignal("");
   const error = useSignal<string|null>(null);
   const appState = useStore(AppState);
+  const loginBtnStatus = useSignal(true);
+  const GoogleBtnStatus = useSignal(true);
   
   const handleLoginSuccess = $(( email:string, username:string) => {
     sessionStorage.setItem("email", email);
     sessionStorage.setItem("username", username);
+    sessionStorage.setItem("name", username);
     sessionStorage.setItem("isLoggedIn", "true");
     appState.user.email = email;
     appState.user.username = username;
@@ -29,7 +32,9 @@ export const Login = component$(() => {
 
 
   const handleLogin = $(async () => {
+    loginBtnStatus.value = false;
     const response = await loginWithEmail(email.value, password.value);
+    loginBtnStatus.value = true;
     if (response.success && response.user) {
       error.value = null;
       handleLoginSuccess(response.user.email, response.user.username);
@@ -40,7 +45,9 @@ export const Login = component$(() => {
     });
 
   const handleGoogleSignIn = $(async () => {
+    GoogleBtnStatus.value = false;
     const response = await googleSignIn();
+    GoogleBtnStatus.value = true;
     if (response.success && response.user) {
       handleLoginSuccess(response.user.email, response.user.username);
       location.href="/app/dashboard/";
@@ -69,8 +76,8 @@ export const Login = component$(() => {
             bind:value={password}
           />
           {error.value && <p class="text-red-500">{error.value}</p>}
-          <ButtonClick text="Login" theme="dark" onClick={handleLogin} />
-          <ButtonClick text="Continue with Google" theme="light" onClick={handleGoogleSignIn}/>
+          <ButtonClick text="Login" theme="dark" status={loginBtnStatus.value} onClick={handleLogin} />
+          <ButtonClick text="Continue with Google" theme="light" status={GoogleBtnStatus.value} onClick={handleGoogleSignIn}/>
         </form>
         <p class="mt-4 text-sm">
           Forgot your password?{" "}
