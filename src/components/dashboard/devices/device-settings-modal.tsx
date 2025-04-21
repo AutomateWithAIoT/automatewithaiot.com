@@ -41,7 +41,7 @@ export const DeviceSettingsModal = component$<DeviceSettingsModalProps>(({ devic
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              <path stroke-Linecap="round" stroke-Linejoin="round" stroke-Width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
@@ -53,7 +53,7 @@ export const DeviceSettingsModal = component$<DeviceSettingsModalProps>(({ devic
               <input
                 type="text"
                 value={deviceName.value}
-                onChange$={(e) => (deviceName.value = e.target.value)}
+                onChange$={(e) => (deviceName.value = (e.target as HTMLInputElement).value)}
                 class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white"
               />
             </div>
@@ -63,7 +63,7 @@ export const DeviceSettingsModal = component$<DeviceSettingsModalProps>(({ devic
               <input
                 type="text"
                 value={deviceLocation.value}
-                onChange$={(e) => (deviceLocation.value = e.target.value)}
+                onChange$={(e) => (deviceLocation.value = (e.target as HTMLInputElement).value)}
                 class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white"
               />
             </div>

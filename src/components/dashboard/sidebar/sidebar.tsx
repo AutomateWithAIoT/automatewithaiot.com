@@ -230,7 +230,7 @@ export const Sidebar = component$(() => {
         </ul>
       </nav>
 
-      <div class="border-t border-gray-200 p-4 dark:border-gray-700">
+      <div class="overflow-hidden border-t border-gray-200 p-4 dark:border-gray-700">
         <div
           class={`flex ${isCollapsed.value ? "justify-center" : "items-center"}`}
         >
