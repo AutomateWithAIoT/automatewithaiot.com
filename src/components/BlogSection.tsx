@@ -1,14 +1,15 @@
 import { component$, useSignal, useTask$ } from "@builder.io/qwik";
 import { Button } from "./button";
+import { useLocation } from "@builder.io/qwik-city";
 
 interface Blog {
-  title: string;
   id: number;
+  title: string;
   content: string;
-  imageUrl: string;
   tags: string;
-  date: string;
   author: string;
+  date: string;
+  imageUrl: string;
 }
 
 export const BlogSection = component$(() => {
@@ -47,6 +48,7 @@ export const BlogSection = component$(() => {
 
   const currentIndex = useSignal<number>(0);
   const currentBlog = useSignal<Blog | null>(null);
+  const location = useLocation();
 
   // **Track the blog state mutation using useTask$**
   useTask$(async ({ track }) => {
@@ -54,7 +56,8 @@ export const BlogSection = component$(() => {
     currentBlog.value = blogs.value[currentIndex.value]; // Set initial blog
 
     try {
-      const response = await fetch("/api/blogs");
+      const response = await fetch(
+        `${location.url.origin}/api/blogs`);
       const data: Blog[] = await response.json();
 
       if (data.length > 0) {
