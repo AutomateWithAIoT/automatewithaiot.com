@@ -1,16 +1,6 @@
 import { component$, useSignal, useTask$ } from "@builder.io/qwik";
 import { Button } from "./button";
-import { useLocation } from "@builder.io/qwik-city";
-
-interface Blog {
-  id: number;
-  title: string;
-  content: string;
-  tags: string;
-  author: string;
-  date: string;
-  imageUrl: string;
-}
+import type { Blog } from "~/types/blog";
 
 export const BlogSection = component$(() => {
   const blogs = useSignal<Blog[]>([
@@ -22,7 +12,8 @@ export const BlogSection = component$(() => {
       tags: "AI, Technology, Innovation",
       author: "Jane Doe",
       date: "2025-04-15",
-      imageUrl: "",
+      imageUrl: "/blogs/recent/1.jpg",
+      count: 3,
     },
     {
       id: 2,
@@ -32,7 +23,8 @@ export const BlogSection = component$(() => {
       tags: "Remote Work, Productivity, Business",
       author: "John Smith",
       date: "2025-04-14",
-      imageUrl: "",
+      imageUrl: "/blogs/recent/2.jpg",
+      count: 3,
     },
     {
       id: 3,
@@ -42,34 +34,24 @@ export const BlogSection = component$(() => {
       tags: "Electric Vehicles, Sustainability, Environment",
       author: "Alice Johnson",
       date: "2025-04-13",
-      imageUrl: "",
+      imageUrl: "/blogs/recent/3.jpg",
+      count: 3,
     },
   ]);
 
   const currentIndex = useSignal<number>(0);
   const currentBlog = useSignal<Blog | null>(null);
-  const location = useLocation();
 
   // **Track the blog state mutation using useTask$**
   useTask$(async ({ track }) => {
     track(currentIndex); // Ensures tracking of index changes
     currentBlog.value = blogs.value[currentIndex.value]; // Set initial blog
 
-    try {
-      const response = await fetch(
-        `${location.url.origin}/api/blogs`);
-      const data: Blog[] = await response.json();
-
-      if (data.length > 0) {
-        blogs.value = data;
-      }
-    } catch (error) {
-      console.error("Error fetching blogs:", error);
-    }
   });
 
   return (
     <div class="relative flex h-full w-full flex-col justify-end overflow-hidden rounded-4xl bg-white p-4 shadow-md">
+      {/* eslint-disable-next-line qwik/jsx-img */}
       <img
         src={currentBlog.value?.imageUrl}
         alt={currentBlog.value?.title}
@@ -106,6 +88,7 @@ export const BlogSection = component$(() => {
           currentIndex.value = (currentIndex.value + 1) % blogs.value.length;
         }}
       >
+      {/* eslint-disable-next-line qwik/jsx-img */}
         <img
           src={
             blogs.value[(currentIndex.value + 1) % blogs.value.length].imageUrl
