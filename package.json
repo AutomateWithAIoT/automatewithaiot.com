@@ -9,6 +9,7 @@
   "type": "module",
   "scripts": {
     "build": "qwik build",
+    "static": "npm run build -- --adapter=static",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/static/vite.config.ts",
