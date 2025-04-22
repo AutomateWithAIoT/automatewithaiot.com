@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik"
-import { mockPowerUsageData } from "~/data/mock-chart-data"
+// import { mockPowerUsageData } from "~/data/mock-chart-data"
 
 interface PowerUsageChartProps {
   deviceId: string
@@ -8,7 +8,7 @@ interface PowerUsageChartProps {
 
 export const PowerUsageChart = component$<PowerUsageChartProps>(({ deviceId, timeRange }) => {
   // In a real app, you would filter data based on deviceId and timeRange
-  const data = mockPowerUsageData
+  // const data = mockPowerUsageData
 
   return (
     <div class="h-64 flex items-center justify-center">
@@ -20,7 +20,7 @@ export const PowerUsageChart = component$<PowerUsageChartProps>(({ deviceId, tim
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          <path stroke-Linecap="round" stroke-Linejoin="round" stroke-Width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
         <p class="mt-2">Chart visualization would render here</p>
         <p class="text-sm">
