@@ -62,24 +62,22 @@ export const ContactUs = component$(() => {
               theme="dark"
               onClick={$(async () => {
                 try {
-                  const response = await fetch("/api/contact/data/submitted", {
+                  const response = await fetch("/api/send-email", {
                     method: "POST",
                     headers: {
                       "Content-Type": "application/json",
                     },
                     body: JSON.stringify(formData),
                   });
-
-                  if (!response.ok) {
-                    throw new Error(
-                      `Failed to submit form data: ${response.statusText}`,
-                    );
+                  const result = await response.json();
+                  if (result.success) {
+                    alert("Email sent successfully!");
+                    formData.name = "";
+                    formData.email = "";
+                    formData.message = "";
+                  }else{
+                    throw new Error(result.error);
                   }
-
-                  alert("Form submitted successfully!");
-                  formData.name = "";
-                  formData.email = "";
-                  formData.message = "";
                 } catch (error) {
                   console.error("Error during form submission:", error);
                   alert(
