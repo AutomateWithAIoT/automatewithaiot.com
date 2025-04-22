@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik"
-import { mockStatusDistribution } from "~/data/mock-chart-data"
+// import { mockStatusDistribution } from "~/data/mock-chart-data"
 
 interface StatusDistributionProps {
   deviceId: string
@@ -7,7 +7,7 @@ interface StatusDistributionProps {
 
 export const StatusDistribution = component$<StatusDistributionProps>(({ deviceId }) => {
   // In a real app, you would filter data based on deviceId
-  const data = mockStatusDistribution
+  // const data = mockStatusDistribution
 
   return (
     <div class="h-64 flex items-center justify-center">
@@ -20,15 +20,15 @@ export const StatusDistribution = component$<StatusDistributionProps>(({ deviceI
           stroke="currentColor"
         >
           <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
+            stroke-Linecap="round"
+            stroke-Linejoin="round"
+            stroke-Width="2"
             d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
           />
           <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
+            stroke-Linecap="round"
+            stroke-Linejoin="round"
+            stroke-Width="2"
             d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
           />
         </svg>
