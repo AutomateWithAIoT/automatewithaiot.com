@@ -11,6 +11,7 @@ interface TestimonialProps {
   prevButton?: "visible" | "hidden";
   nextButtonAction?: () => void;
   prevButtonAction?: () => void;
+  selectionClick?: () => void;
 }
 
 export const Testimonial = component$<TestimonialProps>((props) => {
@@ -48,17 +49,18 @@ export const Testimonial = component$<TestimonialProps>((props) => {
         )}
       </div>
       <div
-        class={`flex w-full transform flex-row items-stretch justify-between space-x-4 transition-all duration-500 ease-in-out ${props.state === "collapsed" ? "" : "px-12"}`}
+        class={`flex transform w-full items-stretch justify-between space-x-4 transition-all duration-500 ease-in-out ${props.state === "collapsed" ? "flex-row" : "px-12 flex-col"}`}
       >
         {/* eslint-disable-next-line qwik/jsx-img */}
         <img
           src={props.imageUrl}
           alt={props.name}
-          class={`mb-4 h-full min-h-24 rounded-full object-contain ${props.state === "collapsed" ? "" : ""}`}
+          class={`mb-4 h-full min-h-24 max-h-48 w-full object-cover ${props.state === "collapsed" ? "rounded-2xl cursor-pointer" : "rounded-3xl"}`}
+          onClick$={props.selectionClick}
         />
         {props.state === "expanded" && (
           <div>
-            <p class={`t-2 text-emerald-${textColor}`}>{props.testimonial}</p>
+            <p class={`t-2 text-justify text-emerald-${textColor}`}>{props.testimonial}</p>
             <h3 class={`text-lg font-semibold text-${textColor2}`}>
               {props.name}
             </h3>

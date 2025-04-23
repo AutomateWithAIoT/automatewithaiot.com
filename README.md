@@ -87,3 +87,9 @@ npm run build.server
 ```shell
 npm run build.server
 ```
+
+## Static Site Generator (Node.js)
+
+```shell
+npm run build.server
+```
