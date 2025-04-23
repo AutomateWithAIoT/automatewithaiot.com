@@ -2,7 +2,7 @@ import { $, component$, useSignal, useStore } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { ButtonClick } from "~/components/buttonClick";
 import FaqItem from "~/components/FaqItem";
-import { Resend } from "resend";
+// import { Resend } from "resend";
 
 const faqList = 
   [
@@ -119,53 +119,34 @@ export const ContactUs = component$(() => {
               theme="dark"
               onClick={$(async () => {
                 try {
-                //   if (!formData.name || !formData.email || !formData.message) {
-                //     alert("Please fill in all fields.");
-                //     return;
-                //   }
-                //   const response = await fetch("/api/contact", {
-                //     method: "POST",
-                //     headers: {
-                //       "Content-Type": "application/json",
-                //     },
-                //     body: JSON.stringify(formData),
-                //   });
-                //   const result = await response.json();
-                //   if (result.success) {
-                //     alert("Email sent successfully!");
-                //     formData.name = "";
-                //     formData.email = "";
-                //     formData.message = "";
-                //   }else{
-                //     throw new Error(result.error);
-                //   }
-                // } catch (error) {
-                //   console.error("Error during form submission:", error);
-                //   alert(
-                //     "An error occurred while submitting the form. Please try again.",
-                //   );
-
-                const resend = new Resend(import.meta.env.PUBLIC_RESEND_API_KEY); // Create instance inside the scope
-                await resend.emails.send({
-                  from: "dev@automatewithaiot.com",
-                  to: "support@automatewithaiot.com",
-                  subject: `New Contact Form Submission from ${formData.name}`,
-                  html: `
-                    <h1>New Contact Form Submission</h1>
-                    <p><strong>Name:</strong> ${formData.name}</p>
-                    <p><strong>Email:</strong> ${formData.email}</p>
-                    <p><strong>Message:</strong> ${formData.message}</p>
-                  `,
-                });
-                formData.name = "";
-                formData.email = "";
-                formData.message = "";
-                alert("Email sent successfully!");
+                  if (!formData.name || !formData.email || !formData.message) {
+                    alert("Please fill in all fields.");
+                    return;
+                  }
+                  const response = await fetch("/app/api/send-email", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                  });
+                  const result = await response.json();
+                  if (result.success) {
+                    alert("Email sent successfully!");
+                    formData.name = "";
+                    formData.email = "";
+                    formData.message = "";
+                  }else{
+                    throw new Error(result.error);
+                  }
+                } catch (error) {
+                  console.error("Error during form submission:", error);
+                  alert(
+                    "An error occurred while submitting the form. Please try again.",
+                  );
+                }})}
                 
-              } catch (error) {
-                console.error("Error during form submission:", error);
-                }
-              })}
+            
             />
           </form>
         </div>
