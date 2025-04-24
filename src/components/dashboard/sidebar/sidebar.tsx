@@ -3,7 +3,7 @@ import {
   useSignal,
   $,
   useStore,
-  useVisibleTask$,
+  useOnDocument
 } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
 
@@ -19,7 +19,9 @@ export const Sidebar = component$(() => {
     },
     theme: "light",
   });
-  useVisibleTask$(() => {
+  useOnDocument(
+    "load",
+    $(() => {
     user.name = sessionStorage.getItem("name") || "Alex Johnson";
     user.email = sessionStorage.getItem("email") || "alex.johnson@example.com";
     user.role = sessionStorage.getItem("role") || "User";
@@ -32,7 +34,7 @@ export const Sidebar = component$(() => {
         }),
     );
     user.theme = sessionStorage.getItem("theme") || "light";
-  });
+  }))
 
   const location = useLocation();
   const isCollapsed = useSignal(false);
