@@ -1,4 +1,4 @@
-import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik"
+import { component$, useStore, useTask$ } from "@builder.io/qwik"
 
 interface PowerUsageChartProps {
   deviceId: string
@@ -15,7 +15,7 @@ export const PowerUsageChart = component$<PowerUsageChartProps>(({ deviceId, tim
   })
 
   // Update chart data when device or time range changes
-  useVisibleTask$(({ track }) => {
+  useTask$(({ track }) => {
     track(() => deviceId)
     track(() => timeRange)
 

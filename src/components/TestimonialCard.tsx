@@ -49,13 +49,13 @@ export const Testimonial = component$<TestimonialProps>((props) => {
         )}
       </div>
       <div
-        class={`flex transform w-full items-stretch justify-between space-x-4 transition-all duration-500 ease-in-out ${props.state === "collapsed" ? "flex-row" : "px-12 flex-col"}`}
+        class={`flex transform w-full items-center justify-between space-x-4 transition-all duration-500 ease-in-out ${props.state === "collapsed" ? "flex-row" : "px-12 flex-col"}`}
       >
         {/* eslint-disable-next-line qwik/jsx-img */}
         <img
           src={props.imageUrl}
           alt={props.name}
-          class={`mb-4 h-full min-h-24 max-h-48 w-full object-cover ${props.state === "collapsed" ? "rounded-2xl cursor-pointer" : "rounded-3xl"}`}
+          class={`mb-4 h-full min-h-24 max-h-48 object-cover ${props.state === "collapsed" ? "rounded-2xl w-full cursor-pointer" : "rounded-3xl w-1/2"}`}
           onClick$={props.selectionClick}
         />
         {props.state === "expanded" && (
