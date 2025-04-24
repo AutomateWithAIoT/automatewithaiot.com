@@ -11,7 +11,7 @@ export const faqItem = component$<FaqItemProps>((props) => {
         <div class="">
         <div class="flex flex-row justify-between items-center bg-emerald-50 p-4 rounded-lg shadow-md cursor-pointer" onClick$={props.onClick}>
             <p>{props.question}</p>
-            <span class="material-icons transition-all duration-500 ease-in-out">{props.state === "collapsed" ? "keyboard_arrow_right" : "keyboard_arrow_down"}</span>
+            <span class="material-symbols-outlined transition-all duration-500 ease-in-out">{props.state === "collapsed" ? "keyboard_arrow_right" : "keyboard_arrow_down"}</span>
 
         </div>
         

@@ -1,4 +1,4 @@
-import { $, component$, useOnDocument, useSignal, useStore, useVisibleTask$ } from "@builder.io/qwik";
+import { $, component$, useOnDocument, useSignal, useStore  } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 
 export const Header = component$(() => {
@@ -7,14 +7,16 @@ export const Header = component$(() => {
     isLoggedIn: false,
     username: "",
   });
-  useVisibleTask$(
-    () => {
+  useOnDocument(
+    "load",
+    $(() => {
       const isLoggedIn = sessionStorage.getItem("isLoggedIn");
       if (isLoggedIn) {
         LoginStatus.isLoggedIn = true;
         LoginStatus.username = sessionStorage.getItem("username") || "";
       }
-    })
+    }),
+  )
   
 
   useOnDocument(
@@ -30,7 +32,7 @@ export const Header = component$(() => {
   );
 
   return (
-    <header class='fixed top-0 z-30 flex w-full max-w-[1440px] items-center justify-between bg-emerald-50 p-4 px-8 py-5 mx-auto text-neutral-950'>
+    <header class='fixed select-none top-0 z-30 flex w-full max-w-[1440px] items-center justify-between bg-emerald-50 p-4 px-8 py-5 mx-auto text-neutral-950'>
       {scorllTop.value && (
         <div class='flex items-center space-x-4'>
           {/* eslint-disable-next-line qwik/jsx-img */}

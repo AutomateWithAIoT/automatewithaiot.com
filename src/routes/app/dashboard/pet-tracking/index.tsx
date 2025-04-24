@@ -1,4 +1,4 @@
-import { component$, useSignal, useStore, $, useVisibleTask$ } from "@builder.io/qwik"
+import { component$, useSignal, useStore, $, useTask$ } from "@builder.io/qwik"
 
 export default component$(() => {
   // Pet profile data
@@ -71,7 +71,7 @@ export default component$(() => {
   })
 
   // Simulate changing behaviors over time
-  useVisibleTask$(({ cleanup }) => {
+  useTask$(({ cleanup }) => {
     const behaviors = ["Playing", "Resting", "Eating", "Scratching", "Barking", "Drinking"]
     const confidences = [92, 95, 91, 76, 89, 88]
     let currentIndex = 0

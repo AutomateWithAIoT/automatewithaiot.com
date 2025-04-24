@@ -55,9 +55,9 @@ const selectedblog = useSignal<Blog | null>(blogs.find((blog) => blog.id === blo
             <img
               src={selectedblog.value.imageUrl}
               alt={selectedblog.value.title}
-              class="mb-4 h-64 w-full rounded-3xl object-cover"
+              class="mb-4 h-auto w-full rounded-3xl object-cover"
             />
-            <div class="mt-[-10px] flex w-full flex-col gap-2 rounded-3xl border border-emerald-400 bg-emerald-50 px-4 py-8">
+            <div class="relative z-10 mt-[-200px] flex w-full flex-col gap-2 rounded-b-3xl border border-emerald-400 backdrop-blur-3xl px-4 py-8">
               <p class="text-sm text-emerald-500">{selectedblog.value.date}</p>
               <div class="mt-2 flex flex-row gap-2">
                 {selectedblog.value.tags.split(",").map((tag, index) => (
@@ -80,7 +80,7 @@ const selectedblog = useSignal<Blog | null>(blogs.find((blog) => blog.id === blo
                 window.location.href = `/blogs/${Number(blogId.value)-1}`;
               }}
             >
-              <i class="material-icons text-emerald-50">arrow_back</i>
+              <i class="material-symbols-outlined text-emerald-50">arrow_back</i>
               <p>Previous</p>
             </button>
           )}
@@ -92,7 +92,7 @@ const selectedblog = useSignal<Blog | null>(blogs.find((blog) => blog.id === blo
               }}
             >
               <p>Next </p>
-              <i class="material-icons text-emerald-50">arrow_forward</i>
+              <i class="material-symbols-outlined text-emerald-50">arrow_forward</i>
             </button>
           )}
         </>
