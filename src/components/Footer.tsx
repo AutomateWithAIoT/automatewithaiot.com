@@ -10,11 +10,9 @@ export const Footer = component$(() => {
         <div class="flex flex-col items-start space-y-4 md:w-2/4">
           {/* eslint-disable-next-line qwik/jsx-img */}
           <img src="/logo-dark.webp" alt="Logo" class="h-20 w-auto" />
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet
-            delectus velit tempora ipsam quam dolorum voluptatem, et laborum
-            quidem eligendi praesentium, non minus suscipit? Unde ab modi aut
-            earum sapiente!
+          <p class="max-w-92 overflow-clip text-lg font-light text-emerald-50">
+            Making everyday life easier with smart, friendly AI-powered home
+            automation solutions with AutomatewithAIoT
           </p>
           <Button text="Contact Us" theme="light" link="/contact" />
         </div>
