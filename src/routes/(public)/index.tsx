@@ -39,8 +39,10 @@ export default component$(() => {
         </div>
         <div class="relative flex flex-col space-y-12 sm:block">
           <div class="top-0 bottom-0 left-0 z-10 flex h-1/2 max-h-80 w-full flex-col items-start justify-around space-y-4 rounded-4xl bg-white p-4 text-emerald-950 sm:absolute sm:my-auto sm:w-64">
-            <img src="hero-icon.png" alt="icon" />
-            <h2 class="text-2xl font-semibold">
+            <i class="material-symbols-outlined text-emerald-950">
+              nest_doorbell_visitor
+            </i>
+            <h2 class="text text-2xl font-semibold">
               Welcome To The Home Solutions
             </h2>
             <p>
@@ -51,16 +53,16 @@ export default component$(() => {
           </div>
           <img
             // eslint-disable-next-line qwik/jsx-img
-            src="/hero.jpg"
+            src="/Hero.webp"
             alt="Hero Image"
             width={1000}
             height={1000}
-            class="z-0 mx-auto w-full rounded-xl object-cover sm:h-[800px] sm:w-4/5"
+            class="z-0 mx-auto w-full rounded-3xl object-cover sm:h-[800px] sm:w-4/5"
           />
           <div class="right-0 z-10 flex h-1/2 max-h-80 w-full flex-col items-start justify-around space-y-4 rounded-4xl bg-white p-4 text-emerald-950 sm:absolute sm:top-0 sm:bottom-0 sm:my-auto sm:mt-96 sm:w-64">
             <h2 class="text-2xl font-semibold">Welcome To Our Land</h2>
             <p>We make your home smarter, safer, and full of comfort.</p>
-            <img src="hero-icon.png" alt="icon" />
+            <i class="material-symbols-outlined text-emerald-950">handshake</i>
           </div>
         </div>
       </section>
@@ -85,21 +87,21 @@ export default component$(() => {
             <FeatureCard
               title="Intelligent Energy Optimization"
               description="By managing energy use based on real-time consumption trends, our AI solution optimizes long-term return investment for service providers while improving energy efficiency for homes."
-              imageUrl="https://via.placeholder.com/150"
+              imageUrl="/Feature_1.webp"
             />
           </div>
           <div class="row-span-4 row-start-5 md:col-start-2 md:row-span-5 md:row-start-1">
             <FeatureCard
               title="Predictive Maintenance Alerts"
               description="Our approach uses machine learning to identify abnormalities in appliances early on, avoiding failures. This makes it a key asset for home service companies as it lowers service costs, improves customer happiness, and reduces downtime."
-              imageUrl="https://via.placeholder.com/150"
+              imageUrl="/Feature_2.webp"
             />
           </div>
           <div class="row-span-4 row-start-9 md:col-start-3 md:row-span-3 md:row-start-3">
             <FeatureCard
               title="Adaptive Environment Control"
               description="AI uses human behavior and choices to dynamically modify the temperature, lighting, and air quality. For businesses that supply smart home solutions, it assures comfort, increases the quality of lifestyle, and raises product value."
-              imageUrl="https://via.placeholder.com/150"
+              imageUrl="/Feature_3.webp"
             />
           </div>
         </div>
@@ -121,7 +123,7 @@ export default component$(() => {
               title="Predictive Energy Management"
               tag="EcoComfort"
               description="We discover energy usage with AI Based automation to reduce costs and control efficiency when there’s consistent comfortability and sustainable home preference."
-              imageUrl="https://via.placeholder.com/150"
+              imageUrl="/UseCases_1.webp"
             />
           </div>
           <div>
@@ -129,7 +131,7 @@ export default component$(() => {
               title="Intelligent Security & Surveillance"
               tag="Smart Surveillance"
               description="Our transfer to AI-power Surveillance that detect threats in real-time ,reducing risks, and build up trust via smart protection."
-              imageUrl="https://via.placeholder.com/150"
+              imageUrl="/UseCases_2.webp"
             />
           </div>
         </div>

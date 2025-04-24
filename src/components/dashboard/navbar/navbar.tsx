@@ -57,7 +57,7 @@ export const Navbar = component$(() => {
   return (
     <header class="flex h-16 items-center justify-between border-b border-gray-200 bg-white px-4 md:px-6 dark:border-gray-700 dark:bg-gray-800">
       <div class="flex items-center">
-        <h1 class="text-xl font-semibold text-gray-800 dark:text-white">
+        <h1 class="cursor-default text-xl font-semibold text-gray-800 select-none dark:text-white">
           AI-Powered IoT Solutions
         </h1>
       </div>
@@ -66,7 +66,7 @@ export const Navbar = component$(() => {
         <div class="relative">
           <button
             onClick$={toggleNotifications}
-            class="text-gray-500 hover:text-gray-700 focus:outline-none dark:text-gray-400 dark:hover:text-gray-300"
+            class="cursor-pointer text-gray-500 hover:text-gray-700 focus:outline-none dark:text-gray-400 dark:hover:text-gray-300"
             aria-label="Notifications"
           >
             <svg
@@ -98,7 +98,7 @@ export const Navbar = component$(() => {
                 </h3>
                 <button
                   onClick$={markAllAsRead}
-                  class="text-xs text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300"
+                  class="cursor-pointer text-xs text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300"
                 >
                   Mark all as read
                 </button>
@@ -167,8 +167,8 @@ export const Navbar = component$(() => {
               </div>
               <div class="p-3 text-center">
                 <a
-                  href="/dashboard/alerts"
-                  class="text-sm text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300"
+                  href="/app/dashboard/alerts"
+                  class="cursor-pointer text-sm text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300"
                 >
                   View all notifications
                 </a>
@@ -180,7 +180,7 @@ export const Navbar = component$(() => {
         <div class="relative">
           <button
             onClick$={toggleProfile}
-            class="flex items-center focus:outline-none"
+            class="flex cursor-pointer items-center focus:outline-none"
             aria-label="User menu"
           >
             <img
@@ -208,7 +208,7 @@ export const Navbar = component$(() => {
           </button>
 
           {isProfileOpen.value && (
-            <div class="absolute right-0 z-10 mt-2 w-48 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800">
+            <div class="absolute right-0 z-10 mt-2 w-58 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800">
               <div class="border-b border-gray-200 p-3 dark:border-gray-700">
                 <p class="text-sm font-medium text-gray-800 dark:text-white">
                   {user.name}
