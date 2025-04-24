@@ -18,35 +18,35 @@ export const TestimonialSection = component$(() => {
         position: "Director",
         company: "UrbanNest Constructions",
         testimonial: "As a developer of homes, we sought a reliable smart home system that would work well with our housing developments. That's exactly what your AI-powered solution delivered: flexible features, simple to operate controls, and smooth automation. Throughout, the team gave us outstanding support, which enabled us to secure the future of our innovations.",
-        imageUrl: "/testimonials/user-1.jpg",
+        imageUrl: "/testimonials/Image_1.webp",
       },
       {
         name: "Anjali Fernando",
         position: "CEO",
         company: "LuxeStay Rentals",
         testimonial: "The change has been remarkable since we installed your smart home automation system in each of our rental properties. The platform significantly improved client happiness and cut our operational costs by 35%, from energy-saving controls to intelligent locks. I highly suggest it to businesses that focus on hospitality.",
-        imageUrl: "/testimonials/user-2.jpg",
+        imageUrl: "/testimonials/Image_2.webp",
       },
       {
         name: "Ruwan Perera",
         position: "Founder",
         company: "Elite Interior Designs",
         testimonial: "Your smart systems are installed in all of our opulent interior projects. Our clients now want this level of advanced control, in addition to the fact that it significantly improves the value of our service. Because of its versatility, your AI helper has become a popular feature among homeowners.",
-        imageUrl: "/testimonials/user-3.jpg",
+        imageUrl: "/testimonials/Image_3.webp",
       },
       {
         name: "Kasun Jayasinghe",
         position: "Operations Manager",
         company: "SereneVillas Group",
         testimonial: "When we used your automation on the internet, it was very difficult to operate a villa network. AI-driven energy optimization, remote climate control, and real-time surveillance have simplified and improved management.",
-        imageUrl: "/testimonials/user-4.jpg",
+        imageUrl: "/testimonials/Image_4.webp",
       },
       {
         name: "Shalini Rodrigo",
         position: "CTO",
         company: "PrimeLiving Realty",
         testimonial: "We wanted to be at the forefront of innovation in the real estate industry, and your smart home automation made us stand out. Artificial intelligence (AI) innovations like voice-activated ambiance, automated lighting, and maintenance warnings impress buyers in mind. This is now the new norm rather than a luxury.",
-        imageUrl: "/testimonials/user-5.jpg"
+        imageUrl: "/testimonials/Image_5.webp"
       }
     ]
   );

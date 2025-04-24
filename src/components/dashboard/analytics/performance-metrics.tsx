@@ -1,4 +1,4 @@
-import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik"
+import { component$, useStore, useTask$ } from "@builder.io/qwik"
 
 export const PerformanceMetrics = component$(() => {
   // Dummy data for performance metrics
@@ -12,7 +12,7 @@ export const PerformanceMetrics = component$(() => {
   })
 
   // Simulate changing metrics
-  useVisibleTask$(({ cleanup }) => {
+  useTask$(({ cleanup }) => {
     const interval = setInterval(() => {
       metrics.responseTime = `${Math.floor(Math.random() * 50) + 100}ms`
       metrics.cpuUsage = `${Math.floor(Math.random() * 15) + 25}%`

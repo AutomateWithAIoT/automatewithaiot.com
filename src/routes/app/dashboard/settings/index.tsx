@@ -1,4 +1,4 @@
-import { component$, useSignal, useStore, $, useVisibleTask$ } from "@builder.io/qwik"
+import { component$, useSignal, useStore, $, useOnDocument } from "@builder.io/qwik"
 
 export default component$(() => {
   const user = useStore({
@@ -12,13 +12,15 @@ export default component$(() => {
     },
     theme: "dark",
   })
-  useVisibleTask$(() => {
+  useOnDocument(
+    "load", 
+    $(() => {
     user.name = sessionStorage.getItem("name") || user.name
     user.email = sessionStorage.getItem("email") || user.email
     user.role = sessionStorage.getItem("role") || user.role
     user.notifications = JSON.parse(sessionStorage.getItem("notifications") || JSON.stringify(user.notifications))
     user.theme = sessionStorage.getItem("theme") || user.theme
-  })
+  }))
 
   const isSaving = useSignal(false)
   const showSuccess = useSignal(false)
