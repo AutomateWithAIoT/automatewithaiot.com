@@ -5,16 +5,18 @@ import { mockAlerts } from "~/data/mock-alerts"
 export default component$(() => {
   const alerts = useSignal([...mockAlerts])
   const filter = useSignal("all")
+  const filteredAlerts = useSignal([...mockAlerts])
 
   const clearAlert = $((alertId:string) => {
     alerts.value = alerts.value.filter((alert) => alert.id !== alertId)
+    filteredAlerts.value = filteredAlerts.value.filter((alert) => alert.id !== alertId)
   })
 
   const clearAllAlerts = $(() => {
     alerts.value = []
+    filteredAlerts.value = []
   })
 
-  const filteredAlerts = useSignal([...mockAlerts])
 
   const updateFilter = $((newFilter:string) => {
     filter.value = newFilter
@@ -64,7 +66,7 @@ export default component$(() => {
             <h2 class="font-semibold text-gray-800 dark:text-white">Notification History</h2>
             <button
               onClick$={clearAllAlerts}
-              class="text-sm text-gray-500 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-400"
+              class="text-sm cursor-pointer text-gray-500 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-400"
             >
               Clear All
             </button>

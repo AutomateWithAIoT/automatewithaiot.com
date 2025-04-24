@@ -202,14 +202,14 @@ export const Sidebar = component$(() => {
             </svg> */}
           </div>
           {!isCollapsed.value && (
-            <span class="ml-2 text-lg font-semibold text-gray-800 dark:text-white">
+            <span class="ml-2 cursor-default text-lg font-semibold text-gray-800 dark:text-white">
               IoT Dashboard
             </span>
           )}
         </div>
         <button
           onClick$={toggleSidebar}
-          class="text-gray-500 hover:text-gray-700 focus:outline-none dark:text-gray-400 dark:hover:text-gray-300"
+          class="cursor-pointer text-gray-500 hover:text-gray-700 focus:outline-none dark:text-gray-400 dark:hover:text-gray-300"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -262,7 +262,7 @@ export const Sidebar = component$(() => {
         </ul>
       </nav>
 
-      <div class="overflow-hidden border-t border-gray-200 p-4 dark:border-gray-700">
+      <div class="cursor-default overflow-hidden border-t border-gray-200 p-4 dark:border-gray-700">
         <div
           class={`flex ${isCollapsed.value ? "justify-center" : "items-center"}`}
         >
