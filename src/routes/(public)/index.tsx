@@ -75,11 +75,11 @@ export default component$(() => {
           >
             Features
           </h2>
-          <p class="px-20 py-12 text-center text-3xl overflow-ellipsis md:px-52">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quo?
-            Quia laborum qui reiciendis, corporis voluptatum eum alias mollitia
-            soluta! Ea distinctio laboriosam est incidunt? Et quod in dolor
-            accusamus.
+          <p class="px-20 py-12 text-center text-3xl overflow-ellipsis md:px-64">
+            AI-powered energy optimizing, maintenance planning, and adaptive
+            control can improve customer happiness and operational effectiveness
+            while offering more intelligent and economical solutions for modern
+            home service providers.
           </p>
         </div>
         <div class="grid h-[1000px] w-full grid-cols-1 grid-rows-12 space-y-4 bg-white px-8 pt-20 pb-40 md:h-[700px] md:grid-cols-3 md:grid-rows-5 md:space-x-10">
@@ -110,11 +110,12 @@ export default component$(() => {
       <section class="flex flex-col items-center justify-center bg-white">
         <div class="xs:[clip-path:ellipse(70%_70%_at_50%_100%)] z-10 my-auto flex w-full flex-col items-center space-y-4 bg-emerald-50 pt-64 sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)]">
           <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 text-sm">
-            Why Choose Us
+            Use Cases
           </h2>
-          <p class="px-20 py-12 text-center text-4xl overflow-ellipsis md:px-52">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quo?
-            Quia laborum qui reiciendis,
+          <p class="px-32 py-12 text-center text-4xl leading-14 overflow-ellipsis md:px-52">
+            AI-Powered Smart Home Automation: Optimize Energy,
+            <br /> Improve Security, Lower Costs, and Provide Smooth Automation
+            for Safe and Healthy Living.
           </p>
         </div>
         <div class="grid w-full grid-flow-row grid-cols-1 space-y-4 bg-emerald-50 px-8 pt-20 pb-40 sm:grid-cols-2 md:h-[700px] md:space-y-0 md:space-x-10">

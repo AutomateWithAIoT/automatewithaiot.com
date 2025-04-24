@@ -1,6 +1,6 @@
-import { component$, useSignal, useTask$ } from "@builder.io/qwik";
-import { Button } from "./button";
+import { $, component$, useSignal, useTask$ } from "@builder.io/qwik";
 import type { Blog } from "~/types/blog";
+import { ButtonClick } from "./buttonClick";
 
 export const BlogSection = component$(() => {
   const blogs = useSignal<Blog[]>([
@@ -11,7 +11,7 @@ export const BlogSection = component$(() => {
       tags: "Automation, PropTech, Sustainability",
       author: "Alex Carter",
       date: "202-06-12",
-      imageUrl: "/blogs/recent/1.jpg",
+      imageUrl: "/blogs/Blog_1.webp",
       count: 3,
     },
     {
@@ -22,7 +22,7 @@ export const BlogSection = component$(() => {
       tags: "Automation, PropTech, AI-Driven",
       author: "Alex Carter",
       date: "2024-09-18",
-      imageUrl: "/blogs/recent/2.jpg",
+      imageUrl: "/blogs/Blog_2.webp",
       count: 3,
     },
     {
@@ -33,7 +33,7 @@ export const BlogSection = component$(() => {
       tags: "Automation, AI-Driven, Innovation",
       author: "Alex Carter",
       date: "2025-02-07",
-      imageUrl: "/blogs/recent/3.jpg",
+      imageUrl: "/blogs/Blog_3.webp",
       count: 3,
     },
   ]);
@@ -56,8 +56,8 @@ export const BlogSection = component$(() => {
         alt={currentBlog.value?.title}
         class="absolute top-0 left-0 z-0 h-full w-full object-cover"
       />
-      <div class="relative bottom-0 left-0 z-10 flex w-9/12 flex-col justify-around space-x-4 md:flex-row">
-        <div class="flex max-w-full flex-col gap-2 md:max-w-6/12">
+      <div class="absolute bottom-0 backdrop-blur-xl text-emerald-50 left-0 right-0 p-8 rounded-3xl z-10 flex m-4 flex-col justify-around space-x-4 md:flex-row">
+        <div class="flex flex-col gap-2 max-w-4/12">
           <div class="flex flex-row gap-2">
             {currentBlog.value?.tags.split(",").map((tag, index) => (
               <div key={index} class="w-fit rounded-full border px-4 py-2">
@@ -67,22 +67,28 @@ export const BlogSection = component$(() => {
           </div>
           <h2 class="text-xl font-semibold">{currentBlog.value?.title}</h2>
         </div>
-        <div class="flex max-w-full md:max-w-5/12 items-start flex-col gap-2">
-          <p class="text-sm text-black" dangerouslySetInnerHTML={`${currentBlog.value?.content.slice(0, 200)}...`}>
-            
-          </p>
-          <Button
+        <div class="flex max-w-6/12 items-start flex-col gap-2">
+          <p class="text-sm text-black" dangerouslySetInnerHTML={`${currentBlog.value?.content.slice(0, 200)}...`}></p>
+          {/* <Button
             text="Read More"
             link={`/blogs/${currentBlog.value?.id}`}
             theme="dark"
+          /> */}
+          <ButtonClick
+            text="Read More"
+            onClick={$(() => {
+              window.location.href = `/blogs/${currentBlog.value?.id}`;
+            })}
+            theme="dark"
+            status={true}
           />
           {/* <button>
             <a href={`/blogs/${currentBlog.value?.id}`}>Read More</a>
           </button> */}
         </div>
-      </div>
+      
       <div
-        class="absolute right-0 bottom-0 z-20 h-3/12 w-3/12 cursor-pointer"
+        class="h-auto w-3/12  cursor-pointer border border-emerald-50  rounded-2xl overflow-clip"
         onClick$={() => {
           currentIndex.value = (currentIndex.value + 1) % blogs.value.length;
         }}
@@ -93,8 +99,9 @@ export const BlogSection = component$(() => {
             blogs.value[(currentIndex.value + 1) % blogs.value.length].imageUrl
           }
           alt={blogs.value[(currentIndex.value + 1) % blogs.value.length].title}
-          class="absolute top-0 left-0 z-0 h-full w-full object-cover"
+          class="z-0 h-full w-full object-cover"
         />
+      </div>
       </div>
     </div>
   );
