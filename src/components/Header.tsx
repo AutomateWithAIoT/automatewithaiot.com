@@ -34,7 +34,7 @@ export const Header = component$(() => {
       {scorllTop.value && (
         <div class='flex items-center space-x-4'>
           {/* eslint-disable-next-line qwik/jsx-img */}
-          <img src='/logo-light.png' alt='Logo' class='h-12 w-auto' />
+          <img src='/logo-light.webp' alt='Logo' class='h-12 w-auto select-none' />
         </div>
       )}
       {!scorllTop.value && (

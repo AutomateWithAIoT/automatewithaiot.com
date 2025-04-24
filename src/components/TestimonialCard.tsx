@@ -42,7 +42,7 @@ export const Testimonial = component$<TestimonialProps>((props) => {
             class="absolute top-0 left-0 z-10 m-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-950"
             onClick$={props.prevButtonAction}
           >
-            <i class="material-icons text-emerald-50">arrow_back</i>
+            <i class="material-symbols-outlined text-emerald-50">arrow_back</i>
           </button>
         ) : (
           ""
@@ -76,7 +76,7 @@ export const Testimonial = component$<TestimonialProps>((props) => {
             class="absolute right-0 bottom-0 z-10 m-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-black"
             onClick$={props.nextButtonAction}
           >
-            <i class="material-icons text-emerald-50">arrow_forward</i>
+            <i class="material-symbols-outlined text-emerald-50">arrow_forward</i>
           </button>
         ) : (
           ""
