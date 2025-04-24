@@ -1,4 +1,4 @@
-import { component$, useSignal, useTask$ } from "@builder.io/qwik";
+import {  component$, useSignal, useTask$ } from "@builder.io/qwik";
 import type { Blog } from "~/types/blog";
 import { Link } from "@builder.io/qwik-city";
 
