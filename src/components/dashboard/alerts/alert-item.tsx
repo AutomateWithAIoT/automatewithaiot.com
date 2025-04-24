@@ -47,7 +47,7 @@ export const AlertItem = component$<AlertItemProps>(({ alert, onClear$ }) => {
         <div class="ml-3 flex-1">
           <div class="flex items-center justify-between">
             <p class="text-sm font-medium text-gray-800 dark:text-white">{alert.title}</p>
-            <button onClick$={onClear$} class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
+            <button onClick$={onClear$} class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-4 w-4"

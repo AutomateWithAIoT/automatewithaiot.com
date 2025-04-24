@@ -10,7 +10,7 @@ export const RecentAlerts = component$(() => {
       <div class="p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
         <h2 class="font-semibold text-gray-800 dark:text-white">Recent Alerts</h2>
         <Link
-          href="/dashboard/alerts"
+          href="/app/dashboard/alerts"
           class="text-sm text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300"
         >
           View all

@@ -9,7 +9,7 @@ export const Footer = component$(() => {
       <div class="flex w-full flex-col items-start justify-around space-y-8 py-8 md:flex-row md:space-y-0 md:space-x-8">
         <div class="flex flex-col items-start space-y-4 md:w-2/4">
           {/* eslint-disable-next-line qwik/jsx-img */}
-          <img src="/logo-dark.png" alt="Logo" class="h-20 w-auto" />
+          <img src="/logo-dark.webp" alt="Logo" class="h-20 w-auto" />
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet
             delectus velit tempora ipsam quam dolorum voluptatem, et laborum

@@ -16,7 +16,7 @@ export const UseCaseCard = component$<UseCaseCardProps>((props) => {
         alt={props.title}
         class="absolute top-0 left-0 z-0 h-full w-full object-cover"
       />
-      <div class="relative bottom-0 left-0 z-10 w-full rounded-3xl px-4 py-2 text-emerald-50">
+      <div class="relative backdrop-brightness-25 space-y-2 bottom-0 left-0 z-20 w-full rounded-3xl px-4 py-4 text-emerald-50">
         <div class="w-fit rounded-full border border-emerald-50 bg-transparent px-4 py-2 backdrop:blur-3xl">
           <p>{props.tag}</p>
         </div>
