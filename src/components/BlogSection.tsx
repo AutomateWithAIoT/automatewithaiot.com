@@ -68,8 +68,8 @@ export const BlogSection = component$(() => {
           <h2 class="text-xl font-semibold">{currentBlog.value?.title}</h2>
         </div>
         <div class="flex max-w-full md:max-w-5/12 items-start flex-col gap-2">
-          <p class="text-sm text-black">
-            {currentBlog.value?.content.slice(0, 200)}...
+          <p class="text-sm text-black" dangerouslySetInnerHTML={`${currentBlog.value?.content.slice(0, 200)}...`}>
+            
           </p>
           <Button
             text="Read More"

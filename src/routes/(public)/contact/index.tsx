@@ -1,6 +1,5 @@
-import { $, component$, useSignal, useStore } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
-import { ButtonClick } from "~/components/buttonClick";
+import { $, component$, useSignal } from "@builder.io/qwik";
+import { useLocation, type DocumentHead } from "@builder.io/qwik-city";
 import FaqItem from "~/components/FaqItem";
 // import { Resend } from "resend";
 
@@ -35,12 +34,13 @@ const faqList =
 
 
 export const ContactUs = component$(() => {
+  const location = useLocation();
+  const qparams = new URLSearchParams(location.url.search);
   const selectedIndex = useSignal<number|null>(null);
-  const formData = useStore({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const name = useSignal<string>("");
+  const email = useSignal<string>("");
+  const message = useSignal<string>("Subject : "+qparams.get("message") || "");
+ 
   return (
     <>
       <section class="flex min-h-screen flex-col md:flex-row items-center justify-center bg-white">
@@ -84,70 +84,33 @@ export const ContactUs = component$(() => {
         </div>
         <div class="items-scratch flex w-full flex-col justify-center space-y-10 space-x-10 bg-emerald-50 px-8 pt-20 pb-40 md:flex-row">
           <div class="bg-fixeed w-full rounded-4xl border border-emerald-300 bg-[url('/contact.png')] bg-cover bg-center bg-no-repeat object-contain p-4 md:w-1/2"></div>
-          <form class="itmes-center w-full flex-col mx-auto flex justify-center space-y-4 px-10 md:w-1/2">
+          <form class="itmes-center w-full flex-col mx-auto flex justify-center space-y-4 px-10 md:w-1/2" action="https://getform.io/f/bjjmgnjb" method="POST">
             <input
               type="text"
               placeholder="Your Name"
               class="w-full rounded-lg border p-2"
               required
-              onInput$={(e) => {
-                formData.name = (e.target as HTMLInputElement).value;
-              }}
-              value={formData.name}
+              name="name"
+              bind:value={name}
             />
             <input
               type="email"
               placeholder="Your Email"
               class="w-full rounded-lg border p-2"
               required
-              onInput$={(e) => {
-                formData.email = (e.target as HTMLInputElement).value;
-              }}
-              value={formData.email}
+              name="email"
+              bind:value={email}
             />
             <textarea
               placeholder="Your Message"
               class="w-full rounded-lg border p-2"
               required
-              onInput$={(e) => {
-                formData.message = (e.target as HTMLInputElement).value;
-              }}
-              value={formData.message}
+              name="message"
+              bind:value={message}
             ></textarea>
-            <ButtonClick
-              text="Submit"
-              theme="dark"
-              onClick={$(async () => {
-                try {
-                  if (!formData.name || !formData.email || !formData.message) {
-                    alert("Please fill in all fields.");
-                    return;
-                  }
-                  const response = await fetch("/app/api/send-email", {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(formData),
-                  });
-                  const result = await response.json();
-                  if (result.success) {
-                    alert("Email sent successfully!");
-                    formData.name = "";
-                    formData.email = "";
-                    formData.message = "";
-                  }else{
-                    throw new Error(result.error);
-                  }
-                } catch (error) {
-                  console.error("Error during form submission:", error);
-                  alert(
-                    "An error occurred while submitting the form. Please try again.",
-                  );
-                }})}
-                
-            
-            />
+            <button type="submit" class="rounded-lg bg-emerald-950 px-4 py-2 text-white hover:bg-emerald-700 transition duration-300 ease-in-out">
+              Submit
+            </button>
           </form>
         </div>
       </section>
