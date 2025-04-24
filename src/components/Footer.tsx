@@ -5,7 +5,7 @@ import { Button } from "./button";
 export const Footer = component$(() => {
   return (
     <footer class="flex flex-col items-center justify-between rounded-t-4xl bg-black p-8 text-white">
-      <div class="h-60 w-full rounded-4xl bg-[url(/footer-main.png)] bg-fixed object-contain" />
+      <div class="h-60 w-full rounded-4xl bg-[url(/Footer.webp)] bg-fixed object-contain" />
       <div class="flex w-full flex-col items-start justify-around space-y-8 py-8 md:flex-row md:space-y-0 md:space-x-8">
         <div class="flex flex-col items-start space-y-4 md:w-2/4">
           {/* eslint-disable-next-line qwik/jsx-img */}

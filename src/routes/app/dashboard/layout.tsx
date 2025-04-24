@@ -1,9 +1,11 @@
-import { $, component$, Slot, useVisibleTask$ } from "@builder.io/qwik";
+import { $, component$, Slot, useOnDocument } from "@builder.io/qwik";
 import { Sidebar } from "~/components/dashboard/sidebar/sidebar";
 import { Navbar } from "~/components/dashboard/navbar/navbar";
 
 export default component$(() => {
-  useVisibleTask$(
+  useOnDocument(
+    "load",
+    
     $(() => {
       const isLoggedIn = sessionStorage.getItem("isLoggedIn");
       if (!isLoggedIn) {

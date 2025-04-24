@@ -2,8 +2,8 @@ import {
   component$,
   useSignal,
   $,
-  useVisibleTask$,
   useStore,
+  useOnDocument,
 } from "@builder.io/qwik";
 import { mockAlerts } from "~/data/mock-alerts";
 
@@ -19,7 +19,9 @@ export const Navbar = component$(() => {
     },
     theme: "light",
   });
-  useVisibleTask$(() => {
+  useOnDocument(
+    "load",
+    $(() => {
     user.name = sessionStorage.getItem("name") || "Alex Johnson";
     user.email = sessionStorage.getItem("email") || "alex.johnson@example.com";
     user.role = sessionStorage.getItem("role") || "User";
@@ -32,7 +34,7 @@ export const Navbar = component$(() => {
         }),
     );
     user.theme = sessionStorage.getItem("theme") || "light";
-  });
+  }))
 
   const isNotificationsOpen = useSignal(false);
   const isProfileOpen = useSignal(false);

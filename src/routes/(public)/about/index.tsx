@@ -14,7 +14,7 @@ Our specialty is AI-driven smart home automation systems that change contemporar
       </section>
       <section class="flex min-h-screen flex-row items-center justify-around space-y-10 space-x-10 bg-emerald-50 p-4 md:flex-row">
         <img
-          src="./team.jpg"
+          src="/About.webp"
           alt="Team Image"
           width={10}
           height={10}

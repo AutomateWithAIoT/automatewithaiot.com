@@ -39,20 +39,20 @@ export const ContactUs = component$(() => {
   const selectedIndex = useSignal<number|null>(null);
   const name = useSignal<string>("");
   const email = useSignal<string>("");
-  const message = useSignal<string>("Subject : "+qparams.get("message") || "");
+  const message = useSignal<string>("Subject : "+qparams.get("message")==null?"":qparams.get("message")!);
  
   return (
     <>
       <section class="flex min-h-screen flex-col md:flex-row items-center justify-center bg-white">
         {/* eslint-disable-next-line qwik/jsx-img */}
         <img
-          src="./hero.png"
+          src="/Contact_1.webp"
           alt="Hero Image"
           width={10}
           height={10}
-          class="mb-4 h-48 rounded-4xl px-12 py-4 w-full md:w-1/3 "
+          class="mb-4 h-72 object-cover rounded-4xl mx-12 my-4 w-full md:w-2/5 "
         />
-        <div class="flex flex-col w-full md:w-2/3 items-center justify-center space-y-4 px-12 py-4">
+        <div class="flex flex-col w-full md:w-3/5 items-center justify-center space-y-4 px-12 py-4">
         <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 text-sm">FAQ</h2>
 
         {faqList.map((faq) => {
@@ -83,7 +83,7 @@ export const ContactUs = component$(() => {
 
         </div>
         <div class="items-scratch flex w-full flex-col justify-center space-y-10 space-x-10 bg-emerald-50 px-8 pt-20 pb-40 md:flex-row">
-          <div class="bg-fixeed w-full rounded-4xl border border-emerald-300 bg-[url('/contact.png')] bg-cover bg-center bg-no-repeat object-contain p-4 md:w-1/2"></div>
+          <div class="bg-fixeed w-full rounded-4xl border border-emerald-300 bg-[url(/Contact_2.webp)] bg-cover bg-center bg-no-repeat object-contain p-4 md:w-1/2"></div>
           <form class="itmes-center w-full flex-col mx-auto flex justify-center space-y-4 px-10 md:w-1/2" action="https://getform.io/f/bjjmgnjb" method="POST">
             <input
               type="text"

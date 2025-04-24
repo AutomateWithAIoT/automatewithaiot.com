@@ -1,4 +1,4 @@
-import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik"
+import { component$, useStore, useTask$,  } from "@builder.io/qwik"
 
 interface StatusDistributionProps {
   deviceId: string
@@ -13,7 +13,7 @@ export const StatusDistribution = component$<StatusDistributionProps>(({ deviceI
   })
 
   // Update chart data when device changes
-  useVisibleTask$(({ track }) => {
+  useTask$(({ track }) => {
     track(() => deviceId)
 
     // Simulate different data for different devices

@@ -1,4 +1,4 @@
-import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik"
+import { component$, useStore, useTask$, } from "@builder.io/qwik"
 
 interface TemperatureChartProps {
   deviceId: string
@@ -15,7 +15,7 @@ export const TemperatureChart = component$<TemperatureChartProps>(({ deviceId, t
   })
 
   // Update chart data when device or time range changes
-  useVisibleTask$(({ track }) => {
+  useTask$(({ track }) => {
     track(() => deviceId)
     track(() => timeRange)
 
