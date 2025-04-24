@@ -67,7 +67,12 @@ export default component$(() => {
       {/* Features section with multiple card ordered in a masionary structure on the left side and picture with features title at the right*/}
       <section class="relative flex flex-col items-center justify-between">
         <div class="xs:[clip-path:ellipse(70%_70%_at_50%_100%)] z-10 my-auto flex w-full flex-col items-center space-y-4 bg-white pt-64 sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)]">
-          <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 text-sm">Features</h2>
+          <h2
+            class="rounded-4xl bg-neutral-300 px-4 py-1 text-sm"
+            id="features"
+          >
+            Features
+          </h2>
           <p class="px-20 py-12 text-center text-3xl overflow-ellipsis md:px-52">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quo?
             Quia laborum qui reiciendis, corporis voluptatum eum alias mollitia
