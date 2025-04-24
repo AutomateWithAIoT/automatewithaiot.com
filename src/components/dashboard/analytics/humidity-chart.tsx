@@ -1,4 +1,4 @@
-import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik"
+import { component$, useStore, useTask$, } from "@builder.io/qwik"
 
 interface HumidityChartProps {
   deviceId: string
@@ -15,7 +15,7 @@ export const HumidityChart = component$<HumidityChartProps>(({ deviceId, timeRan
   })
 
   // Update chart data when device or time range changes
-  useVisibleTask$(({ track }) => {
+  useTask$(({ track }) => {
     track(() => deviceId)
     track(() => timeRange)
 

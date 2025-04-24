@@ -12,19 +12,19 @@ export default component$(() => {
         <div class="flex items-center space-x-2 rounded-full border border-emerald-700 px-3 py-1">
           <div class="flex flex-row justify-center space-x-[-5px]">
             <img
-              src="/testimonials/user-1.jpg"
+              src="/testimonials/Image_2.webp"
               alt=""
-              class="h-8 w-8 rounded-full"
+              class="h-8 w-8 rounded-full border-emerald-700 border" 
             />
             <img
-              src="/testimonials/user-2.jpg"
+              src="/testimonials/Image_3.webp"
               alt=""
-              class="h-8 w-8 rounded-full"
+              class="h-8 w-8 rounded-full border-emerald-700 border" 
             />
             <img
-              src="/testimonials/user-3.jpg"
+              src="/testimonials/Image_5.webp"
               alt=""
-              class="h-8 w-8 rounded-full"
+              class="h-8 w-8 rounded-full border-emerald-700 border" 
             />
           </div>
           <p>Innovating Comfort Through Smart Technology.</p>
