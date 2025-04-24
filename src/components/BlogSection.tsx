@@ -1,12 +1,6 @@
-<<<<<<< Updated upstream
 import { component$, useSignal, useTask$ } from "@builder.io/qwik";
-import { Button } from "./button";
-import type { Blog } from "~/types/blog";
-=======
-import {  component$, useSignal, useTask$ } from "@builder.io/qwik";
 import type { Blog } from "~/types/blog";
 import { Link } from "@builder.io/qwik-city";
->>>>>>> Stashed changes
 
 export const BlogSection = component$(() => {
   const blogs = useSignal<Blog[]>([
@@ -63,15 +57,9 @@ export const BlogSection = component$(() => {
         alt={currentBlog.value?.title}
         class="absolute top-0 left-0 h-full w-full object-cover"
       />
-<<<<<<< Updated upstream
-      <div class="relative bottom-0 left-0 z-10 flex w-9/12 flex-col justify-around space-x-4 md:flex-row">
-        <div class="flex max-w-full flex-col gap-2 md:max-w-6/12">
-          <div class="flex flex-row gap-2">
-=======
       <div class="w-11/12 backdrop-blur-xl text-emerald-50 p-8 rounded-3xl z-10 grid m-4 grid-cols-1 md:grid-cols-5 space-x-4 ">
         <div class="flex col-span-2 flex-col gap-2">
           <div class="flex flex-row gap-2 flex-wrap">
->>>>>>> Stashed changes
             {currentBlog.value?.tags.split(",").map((tag, index) => (
               <div key={index} class="w-fit rounded-full border px-4 py-2">
                 <p>{tag}</p>
@@ -80,24 +68,6 @@ export const BlogSection = component$(() => {
           </div>
           <h2 class="text-xl font-semibold">{currentBlog.value?.title}</h2>
         </div>
-<<<<<<< Updated upstream
-        <div class="flex max-w-full md:max-w-5/12 items-start flex-col gap-2">
-          <p class="text-sm text-black" dangerouslySetInnerHTML={`${currentBlog.value?.content.slice(0, 200)}...`}>
-            
-          </p>
-          <Button
-            text="Read More"
-            link={`/blogs/${currentBlog.value?.id}`}
-            theme="dark"
-          />
-          {/* <button>
-            <a href={`/blogs/${currentBlog.value?.id}`}>Read More</a>
-          </button> */}
-        </div>
-      </div>
-      <div
-        class="absolute right-0 bottom-0 z-20 h-3/12 w-3/12 cursor-pointer"
-=======
          <div class="flex col-span-2 flex-col gap-2">
           <p class="text-sm" dangerouslySetInnerHTML={`${currentBlog.value?.content.slice(0, 200)}...`}></p> 
            <Link
@@ -110,7 +80,6 @@ export const BlogSection = component$(() => {
       
        <div
         class="h-auto relative cursor-pointer border border-emerald-50  rounded-2xl overflow-clip"
->>>>>>> Stashed changes
         onClick$={() => {
           currentIndex.value = (currentIndex.value + 1) % blogs.value.length;
         }}
@@ -121,17 +90,12 @@ export const BlogSection = component$(() => {
             blogs.value[(currentIndex.value + 1) % blogs.value.length].imageUrl
           }
           alt={blogs.value[(currentIndex.value + 1) % blogs.value.length].title}
-<<<<<<< Updated upstream
-          class="absolute top-0 left-0 z-0 h-full w-full object-cover"
-        />
-=======
           class="z-0  h-full w-full object-cover"
         />
         <p class="absolute top-0 bottom-0 flex justify-center items-center my-auto h-fit rounded-l-3xl right-0 z-10 p-4 px-12 text-emerald-950 font-bold bg-white hover:bg-emerald-900 hover:text-emerald-50 transition-colors duration-300 ease-in-out ">Next
           <i class="material-symbols-outlined "> arrow_forward </i>
         </p>
       </div> 
->>>>>>> Stashed changes
       </div>
     </div>
   );
