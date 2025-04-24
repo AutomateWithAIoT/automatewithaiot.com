@@ -13,7 +13,7 @@ export default component$(() => {
         tags: "Automation, PropTech, Sustainability",
         author: "Alex Carter",
         date: "2024-06-12",
-        imageUrl: "/blogs/recent/1.jpg",
+        imageUrl: "/blogs/Blog_1.webp",
         count: 3,
       },
       {
@@ -24,7 +24,7 @@ export default component$(() => {
         tags: "Automation, PropTech, AI-Driven",
         author: "Alex Carter",
         date: "2024-09-18",
-        imageUrl: "/blogs/recent/2.jpg",
+        imageUrl: "/blogs/Blog_2.webp",
         count: 3,
       },
       {
@@ -36,7 +36,7 @@ export default component$(() => {
         tags: "Automation, AI-Driven, Innovation",
         author: "Alex Carter",
         date: "2025-02-07",
-        imageUrl: "/blogs/recent/3.jpg",
+        imageUrl: "/blogs/Blog_3.webp",
         count: 3,
       },
     ]
