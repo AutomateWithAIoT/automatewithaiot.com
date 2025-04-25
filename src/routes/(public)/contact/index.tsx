@@ -77,7 +77,7 @@ export const ContactUs = component$(() => {
         
       </section>
       <section class="flex flex-col items-center justify-center bg-white">
-        <div class="flex w-full flex-col items-center space-y-4 bg-emerald-50 pt-64 [clip-path:ellipse(70%_70%_at_50%_100%)] sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(55%_80%_at_50%_100%)]">
+        <div class="flex w-full flex-col items-center space-y-4 bg-emerald-50 pt-64 [clip-path:ellipse(70%_70%_at_50%_100%)] sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_100%_at_50%_100%)]">
         <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 text-sm">Contact Us</h2>
         <p class="text-center text-lg text-shadow-emerald-950">Please fill the below form to get in touch with us.<br/> We will get back to you as soon as possible.</p>
 
@@ -112,6 +112,25 @@ export const ContactUs = component$(() => {
               Submit
             </button>
           </form>
+        </div>
+      </section>
+      <section class="flex flex-col items-center justify-center bg-emerald-50">
+        <div class="flex w-full flex-col items-center space-y-4 bg-white pt-64 [clip-path:ellipse(70%_70%_at_50%_100%)] sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_100%_at_50%_100%)]">
+          <h2 class="rounded-4xl bg-white px-4 py-1 text-2xl">Get in Touch</h2>
+          <p class="text-center text-lg text-shadow-emerald-950">We are here to help you with any questions or concerns you may have.</p>
+        </div>
+        <div class="w-full items-center grid bg-white gap-4 px-8 py-20 grid-cols-1 md:grid-cols-2 ">
+          <div class="flex flex-col items-center justify-center space-y-4">
+
+          <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=81.21283650398254%2C8.613288965371941%2C81.21637701988222%2C8.615559034762732&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?#map=19/8.614424/81.214607">View Larger Map</a></small>
+          </div>
+          <div class="flex flex-col items-start justify-center space-y-4">
+              <h3 class="text-2xl font-bold">Contact Information</h3>
+              <p class="text-lg">Email: <a href="mailto:support@automatewithaiot.com" class="text-blue-500">support@automatewithaiot.com</a></p>
+              <p class="text-lg">Phone: <a href="tel:+94775898456" class="text-blue-500">+94 77 589 8456</a></p>
+              <p class="text-lg">Address: No 28, Beach Road, Alles Garden, Trincomalee 31000, Eastern Province, Sri Lanka</p>
+              <p class="text-lg">Postal Code: 31000</p>
+          </div>
         </div>
       </section>
     </>
