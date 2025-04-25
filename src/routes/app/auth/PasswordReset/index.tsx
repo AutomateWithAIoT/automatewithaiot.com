@@ -28,15 +28,15 @@ export default component$(() => {
   });
 
   // Handle password reset
-  const handleResetPassword = $(() => {
-    confirmResetPassword(state.resetCode, password.value)
-      .then(() => {
-        alert("Password reset successful!");
-        navigate("/app/auth/login");
-      })
-    .catch(() => {
-        state.error = "Failed to reset password. Try again.";
-    });
+  const handleResetPassword = $(async() => {
+    const result =await confirmResetPassword(state.resetCode, password.value)
+    if (result.success) {
+      alert("Password reset successful!");
+      navigate("/app/auth/Login");
+    }
+    else {
+      state.error = result.error;
+    }
   });
 
   return (

@@ -1,17 +1,14 @@
-import { $, component$, Slot, useOnDocument } from "@builder.io/qwik";
+import { component$, Slot, useVisibleTask$ } from "@builder.io/qwik";
 import { Sidebar } from "~/components/dashboard/sidebar/sidebar";
 import { Navbar } from "~/components/dashboard/navbar/navbar";
 
 export default component$(() => {
-  useOnDocument(
-    "load",
-    
-    $(() => {
+  useVisibleTask$(() => {
       const isLoggedIn = sessionStorage.getItem("isLoggedIn");
       if (!isLoggedIn) {
         location.href = "/app/auth/Login";
       }
-    }),
+    }
   );
   return (
     <div class="flex h-screen bg-emerald-50 dark:bg-gray-900">
