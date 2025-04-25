@@ -11,7 +11,7 @@ export default component$(() => {
           <h4 class="mb-4 text-center text-2xl font-bold">
             Welcome to Smart Home Solution
           </h4>
-          <p class="mt-4">
+          <p class="mt-4 text-center">
             Experience the future of home automation with AI-powered features.
           </p>
         </div>
