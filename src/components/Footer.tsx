@@ -7,7 +7,7 @@ export const Footer = component$(() => {
     <footer class="flex flex-col items-center justify-between rounded-t-4xl bg-black p-8 text-white">
       <div class="h-60 w-full rounded-4xl bg-[url(/Footer.webp)] bg-fixed object-contain" />
       <div class="flex w-full flex-col items-start justify-around space-y-8 py-8 md:flex-row md:space-y-0 md:space-x-8">
-        <div class="flex flex-col items-start space-y-4 md:w-2/4">
+        <div class="flex flex-col items-start space-y-4 md:w-2/5">
           {/* eslint-disable-next-line qwik/jsx-img */}
           <img src="/logo-dark.webp" alt="Logo" class="h-20 w-auto" />
           <p class="max-w-92 overflow-clip text-lg font-light text-emerald-50">
@@ -16,7 +16,18 @@ export const Footer = component$(() => {
           </p>
           <Button text="Contact Us" theme="light" link="/contact" />
         </div>
-        <div class="flex flex-col space-y-4 md:w-1/4">
+        <div class="flex flex-col space-y-4 md:w-1/5">
+          <h3 class="text-xl font-semibold">Resources</h3>
+          <ul class="flex flex-col space-y-2 font-light">
+            <li class="hover:text-emerald-500">
+              <Link href="/Privacy-Policy">Privacy Policy</Link>
+            </li>
+            <li class="hover:text-emerald-500">
+              <Link href="/Terms-Conditions">Terms of Service</Link>
+            </li>
+          </ul>
+        </div>
+        <div class="flex flex-col space-y-4 md:w-1/5">
           <h3 class="text-xl font-semibold">Quick Links</h3>
           <ul class="flex flex-col space-y-2 font-light">
             <li class="hover:text-emerald-500">
@@ -33,7 +44,7 @@ export const Footer = component$(() => {
             </li>
           </ul>
         </div>
-        <div class="flex flex-col space-y-4 md:w-1/4">
+        <div class="flex flex-col space-y-4 md:w-1/5">
           <h3 class="text-xl font-semibold">Follow Us</h3>
           <ul class="flex flex-col space-y-2 font-light">
             <li class="hover:text-blue-500">
