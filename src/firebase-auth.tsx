@@ -5,6 +5,8 @@ import {
     sendPasswordResetEmail,
     signInWithPopup,
     GoogleAuthProvider,
+    verifyPasswordResetCode,
+    confirmPasswordReset
   } from "firebase/auth";
   import { firebaseApp } from "./firebase-config";
 import { $ } from "@builder.io/qwik";
@@ -77,3 +79,20 @@ import { getFirestore,doc,setDoc,getDoc } from "firebase/firestore";
     
   });
 
+export const verifyResetPasswordCode = $(async (code: string) => {
+  try{
+    const email = await verifyPasswordResetCode(auth, code);
+    return { "success":true,"email":email}
+  }catch(err:any){
+    return { "success":false,"error":err.message}
+  }
+});
+
+export const confirmResetPassword = $(async (code: string, newPassword: string) => {
+  try{
+    await confirmPasswordReset(auth, code, newPassword);
+    return { "success":true}
+  }catch(err:any){
+    return { "success":false,"error":err.message}
+  }
+});
