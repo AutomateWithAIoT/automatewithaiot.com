@@ -36,14 +36,29 @@ export const Footer = component$(() => {
         <div class="flex flex-col space-y-4 md:w-1/4">
           <h3 class="text-xl font-semibold">Follow Us</h3>
           <ul class="flex flex-col space-y-2 font-light">
-            <li class="hover:text-emerald-500">
-              <Link href="https://www.facebook.com">Facebook</Link>
+            <li class="hover:text-blue-500">
+              <Link href="https://www.facebook.com" class="relative group w-fit">
+                Facebook
+                <span class="absolute left-0 bottom-[-5px] h-0.5 bg-blue-500 w-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                </Link>
             </li>
-            <li class="hover:text-emerald-500">
-              <Link href="https://www.twitter.com">Twitter</Link>
+            <li class="hover:text-neutral-500">
+              <Link href="https://x.com/AMatewithAIOT" class="relative group w-fit">
+              X
+                <span class="absolute left-0 bottom-[-5px] h-0.5 bg-neutral-500 w-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+              </Link>
             </li>
-            <li class="hover:text-emerald-500">
-              <Link href="https://www.instagram.com">Instagram</Link>
+            <li class="hover:text-red-500">
+              <Link href="https://www.youtube.com/@AutomateAIoT" class="relative group w-fit">
+              YouTube
+                <span class="absolute left-0 bottom-[-5px] h-0.5 bg-red-500 w-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+              </Link>
+            </li>
+            <li class="hover:text-red-900">
+              <Link href="https://www.quora.com/profile/Automate-AIoT" class="relative group w-fit">
+                Quora
+                <span class="absolute left-0 bottom-[-5px] h-0.5 bg-red-950 w-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+              </Link>
             </li>
           </ul>
         </div>
