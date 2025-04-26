@@ -62,7 +62,7 @@ export const BlogSection = component$(() => {
         alt={currentBlog.value.title}
         class="absolute top-0 left-0 h-full w-full object-cover"
       />
-      <div class="w-11/12 backdrop-blur-xl text-emerald-50 p-8 rounded-3xl z-10 grid m-4 grid-cols-1 md:grid-cols-5 space-x-4">
+      <div class="w-11/12 backdrop-blur-xl backdrop-brightness-50 text-emerald-50 p-8 rounded-3xl z-10 grid m-4 grid-cols-1 md:grid-cols-5 space-x-4 space-y-5">
         <div class="flex col-span-2 flex-col gap-2">
           <div class="flex flex-row gap-2 flex-wrap">
             {currentBlog.value.tags.split(",").map((tag, index) => (
