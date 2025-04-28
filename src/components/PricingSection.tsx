@@ -50,21 +50,18 @@ export const PricingSection = component$(() => {
   ];
 
   return (
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 sm:py-8">
       <h2 class="text-3xl font-bold text-center text-emerald-900 mb-6">
         Choose Your Plan
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {plans.map((plan) => (
-            <div class="group"
-            key={plan.name}>
-
-          <div
-            
-            class={`relative p-6 rounded-4xl border-emerald-950 transition duration-100 ease-in-out group-hover:shadow-2xl group-hover:z-30 ${
+            <div class="group" key={plan.name}>
+            <div
+                class={`relative p-6 rounded-4xl border-emerald-950 transition duration-100 ease-in-out group-hover:shadow-2xl group-hover:z-30 ${
               plan.popular ? "border bg-emerald-900 text-emerald-50 group-hover:border-emerald-900" : "border bg-emerald-50 text-emerald-900 w-5/6 mx-auto group-hover:border-emerald-50"
             } ${plan.id ===1? "translate-y-12 pb-10 md:pb-6 md:translate-y-28 z-10": plan.id ===2? " z-20": "translate-y-[-48px] z-10"}`}
-          >
+            >
             <h3 class="text-xl font-semibold  ">
               {plan.name}
             </h3>
@@ -90,7 +87,7 @@ export const PricingSection = component$(() => {
       </div>
       <Link
         href="/contact">
-      <div class="mt-32 flex flex-col items-center justify-center space-y-4">
+      <div class="sm:mt-32 flex flex-col items-center justify-center space-y-4">
         <hr class="w-5/6 border-emerald-900" />
         <p class="flex flex-row items-center justify-center space-x-4"><span class="material-symbols-outlined animate-ping text-emerald-500">keyboard_double_arrow_down</span>More Information</p>
       </div>
