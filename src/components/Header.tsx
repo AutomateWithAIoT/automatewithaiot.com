@@ -1,5 +1,6 @@
-import { $, component$, useOnDocument, useSignal, useStore  } from "@builder.io/qwik";
+import { $, component$, useOnDocument, useOnWindow, useSignal, useStore  } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
+import { MobileMenu } from "./MobileMenu";
 
 export const Header = component$(() => {
   const scorllTop = useSignal(false);
@@ -7,6 +8,19 @@ export const Header = component$(() => {
     isLoggedIn: false,
     username: "",
   });
+  const isMobile = useStore({
+    isMobile: false,
+  });
+  const handleResize = $(() => {
+    if (window.innerWidth < 720) {
+      isMobile.isMobile = true;
+    }
+    else {
+      isMobile.isMobile = false;
+    }
+  });
+  useOnWindow("resize", handleResize);
+  useOnWindow("load", handleResize);
   useOnDocument(
     "load",
     $(() => {
@@ -32,18 +46,27 @@ export const Header = component$(() => {
   );
 
   return (
-    <header class='fixed select-none top-0 z-30 flex w-full max-w-[1440px] items-center justify-between bg-emerald-50 p-4 px-8 py-5 mx-auto text-neutral-950'>
+    <header class='fixed select-none top-0 z-40 flex w-full max-w-[1440px] items-center justify-between bg-emerald-50 p-4 px-8 py-5 mx-auto text-neutral-950'>
       {scorllTop.value && (
         <div class='flex items-center space-x-4'>
           {/* eslint-disable-next-line qwik/jsx-img */}
+          <Link href='/'>
           <img src='/logo-light.webp' alt='Logo' class='h-12 w-auto select-none' />
+          </Link>
         </div>
       )}
       {!scorllTop.value && (
+        <Link href='/'>
         <h1 class='text-2xl font-bold underline underline-offset-8 select-none'>
           AutomateWithAIoT
         </h1>
+        </Link>
       )}
+      {isMobile.isMobile && (
+        <MobileMenu />
+      )}
+      {!isMobile.isMobile && (
+        <>
       <nav>
         <ul class='flex space-x-8 text-lg'>
           <li>
@@ -75,6 +98,8 @@ export const Header = component$(() => {
       >
         {LoginStatus.isLoggedIn ? "Dashboard" : "Login"}
       </Link>
+          </>
+      )}
     </header>
   );
 });

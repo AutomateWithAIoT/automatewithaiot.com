@@ -3,37 +3,38 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 import { BlogSection } from "~/components/BlogSection";
 import { Button } from "~/components/button";
 import { FeatureCard } from "~/components/feature";
+import { PricingSection } from "~/components/PricingSection";
 import { TestimonialSection } from "~/components/TestimonialSection";
 import { UseCaseCard } from "~/components/UseCaseCard";
 export default component$(() => {
   return (
     <>
       <section class="mx-8 mt-24 flex min-h-screen flex-col items-center justify-start overflow-clip rounded-[55px] pt-32">
-        <div class="flex items-center space-x-2 rounded-full border border-emerald-700 px-3 py-1">
+        <div class="flex items-center space-x-4 rounded-full border border-emerald-700 px-3 py-1">
           <div class="flex flex-row justify-center space-x-[-5px]">
             <img
               src="/testimonials/Image_2.webp"
               alt=""
-              class="h-8 w-8 rounded-full border-emerald-700 border" 
+              class="h-8 w-8 rounded-full object-cover border-emerald-700 border" 
             />
             <img
               src="/testimonials/Image_3.webp"
               alt=""
-              class="h-8 w-8 rounded-full border-emerald-700 border" 
+              class="h-8 w-8 rounded-full object-cover border-emerald-700 border" 
             />
             <img
               src="/testimonials/Image_5.webp"
               alt=""
-              class="h-8 w-8 rounded-full border-emerald-700 border" 
+              class="h-8 w-8 rounded-full object-cover border-emerald-700 border" 
             />
           </div>
           <p>Innovating Comfort Through Smart Technology.</p>
         </div>
-        <h1 class="z-20 my-12 text-center font-sans text-7xl leading-20 font-light text-emerald-950">
+        <h1 class="z-20 my-12 text-center font-sans text-4xl leading-15 sm:text-7xl sm:leading-20 font-light text-emerald-950">
           Transforming Modern Living with Smart Automation, Seamless Security,
           and Unmatched Comfort.
         </h1>
-        <div class="my-12 flex items-center justify-center space-x-4">
+        <div class="my-12 flex flex-col space-y-4 sm:flex-row items-center justify-center sm:space-x-4">
           <Button text="Get Started" theme="dark" link="/app/dashboard/" />
           <Button text="Contact us" theme="light" link="/contact" />
         </div>
@@ -75,7 +76,7 @@ export default component$(() => {
           >
             Features
           </h2>
-          <p class="px-20 py-12 text-center text-3xl overflow-ellipsis md:px-64">
+          <p class="px-20 py-12 text-center text-xl sm:text-3xl overflow-ellipsis md:px-64">
             AI-powered energy optimizing, maintenance planning, and adaptive
             control can improve customer happiness and operational effectiveness
             while offering more intelligent and economical solutions for modern
@@ -112,7 +113,7 @@ export default component$(() => {
           <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 text-sm">
             Use Cases
           </h2>
-          <p class="px-32 py-12 text-center text-4xl leading-14 overflow-ellipsis md:px-52">
+          <p class="px-12 sm:px-32 py-12 text-center text-2xl sm:text-4xl sm:leading-14 overflow-ellipsis md:px-52">
             AI-Powered Smart Home Automation: Optimize Energy,
             <br /> Improve Security, Lower Costs, and Provide Smooth Automation
             for Safe and Healthy Living.
@@ -150,10 +151,21 @@ export default component$(() => {
       <section class="flex flex-col items-center justify-center bg-white">
         <div class=" z-10 my-auto flex w-full flex-col items-center space-y-4 bg-emerald-50 pt-64 sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)] xs:[clip-path:ellipse(70%_70%_at_50%_100%)]">
           <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 mt-40 text-sm">
+            Pricing
+          </h2>
+        </div>
+        <div class="w-full bg-emerald-50 px-8 pt-20 pb-40">
+          <PricingSection />
+        </div>
+
+      </section>
+      <section class="flex flex-col items-center justify-center bg-emerald-50">
+        <div class=" z-10 my-auto flex w-full flex-col items-center space-y-4 bg-white pt-64 sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)] xs:[clip-path:ellipse(70%_70%_at_50%_100%)]">
+          <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 mt-40 text-sm">
             What our clients say
           </h2>
         </div>
-        <div class="w-full bg-emerald-50 px-8 pt-20 pb-20">
+        <div class="w-full bg-white px-8 pt-20 pb-20">
           <TestimonialSection />
         </div>
       </section>
@@ -162,11 +174,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: "AotomatewithAIoT",
   meta: [
     {
       name: "description",
-      content: "Qwik site description",
+      content: "Home page for AutomatewithAIoT",
     },
   ],
 };

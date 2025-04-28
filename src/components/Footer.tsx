@@ -6,19 +6,19 @@ export const Footer = component$(() => {
   return (
     <footer class="flex flex-col items-center justify-between rounded-t-4xl bg-black p-8 text-white">
       <div class="h-60 w-full rounded-4xl bg-[url(/Footer.webp)] bg-fixed object-contain" />
-      <div class="flex w-full flex-col items-start justify-around space-y-8 py-8 md:flex-row md:space-y-0 md:space-x-8">
-        <div class="flex flex-col items-start space-y-4 md:w-2/5">
+      <div class="flex w-full flex-col items-center sm:items-start justify-around space-y-8 py-8 sm:flex-row md:space-y-0 md:space-x-8">
+        <div class="flex flex-col items-center md:items-start space-y-4 md:w-2/5">
           {/* eslint-disable-next-line qwik/jsx-img */}
           <img src="/logo-dark.webp" alt="Logo" class="h-20 w-auto" />
-          <p class="max-w-92 overflow-clip text-lg font-light text-emerald-50">
+          <p class="max-w-92 overflow-clip text-center sm:text-left text-lg font-light text-emerald-50">
             Making everyday life easier with smart, friendly AI-powered home
             automation solutions with AutomatewithAIoT
           </p>
           <Button text="Contact Us" theme="light" link="/contact" />
         </div>
-        <div class="flex flex-col space-y-4 md:w-1/5">
+        <div class="flex flex-col items-center sm:items-start sm:w-1/3 space-y-4 w-full md:w-1/5">
           <h3 class="text-xl font-semibold">Resources</h3>
-          <ul class="flex flex-col space-y-2 font-light">
+          <ul class="flex flex-col items-center sm:items-start space-y-2 font-light">
             <li class="hover:text-emerald-500">
               <Link href="/Privacy-Policy">Privacy Policy</Link>
             </li>
@@ -27,9 +27,9 @@ export const Footer = component$(() => {
             </li>
           </ul>
         </div>
-        <div class="flex flex-col space-y-4 md:w-1/5">
+        <div class="flex flex-col items-center sm:items-start sm:w-1/3 space-y-4 w-full md:w-1/5">
           <h3 class="text-xl font-semibold">Quick Links</h3>
-          <ul class="flex flex-col space-y-2 font-light">
+          <ul class="flex flex-col items-center sm:items-start space-y-2 font-light">
             <li class="hover:text-emerald-500">
               <Link href="/about">About Us</Link>
             </li>
@@ -44,11 +44,11 @@ export const Footer = component$(() => {
             </li>
           </ul>
         </div>
-        <div class="flex flex-col space-y-4 md:w-1/5">
+        <div class="flex flex-col items-center sm:items-start sm:w-1/3 space-y-4 w-full md:w-1/5">
           <h3 class="text-xl font-semibold">Follow Us</h3>
-          <ul class="flex flex-col space-y-2 font-light">
+          <ul class="flex flex-col items-center sm:items-start space-y-2 font-light">
             <li class="hover:text-blue-500">
-              <Link href="https://www.facebook.com" class="relative group w-fit">
+              <Link href="https://www.facebook.com/AutomateAIoT" class="relative group w-fit">
                 Facebook
                 <span class="absolute left-0 bottom-[-5px] h-0.5 bg-blue-500 w-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </Link>
