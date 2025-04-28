@@ -61,7 +61,7 @@ export const TestimonialSection = component$(() => {
   });
 
   return (
-    <div class="flex flex-col items-center justify-center bg-emerald-50 p-4">
+    <div class="flex flex-col items-center justify-center bg-white p-4">
       <h2 class="mb-4 text-2xl font-bold">What Our Clients Say</h2>
       {/* <div class="grid grid-cols-2 grid-rows-2 space-y-4 space-x-4 sm:grid-rows-3 md:grid-cols-5 lg:grid-cols-8 select-none h-auto"> */}
       <div class = "flex flex-row justify-center items-center flex-wrap sm:space-x-4 space-y-4">
