@@ -38,7 +38,7 @@ export default component$(() => {
           <Button text="Get Started" theme="dark" link="/app/dashboard/" />
           <Button text="Contact us" theme="light" link="/contact" />
         </div>
-        <div class="relative flex flex-col space-y-12 sm:block">
+        <div class="relative flex flex-col space-y-12 mb-10 sm:mb-0 sm:block">
           <div class="top-0 bottom-0 left-0 z-10 flex h-1/2 max-h-80 w-full flex-col items-start justify-around space-y-4 rounded-4xl bg-white p-4 text-emerald-950 sm:absolute sm:my-auto sm:w-64">
             <i class="material-symbols-outlined text-emerald-950">
               nest_doorbell_visitor
@@ -69,7 +69,7 @@ export default component$(() => {
       </section>
       {/* Features section with multiple card ordered in a masionary structure on the left side and picture with features title at the right*/}
       <section class="relative flex flex-col items-center justify-between">
-        <div class=" z-10 my-auto flex w-full flex-col items-center space-y-4 bg-white pt-64 sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)] xs:[clip-path:ellipse(70%_70%_at_50%_100%)]">
+        <div class=" z-10 my-auto flex w-full flex-col items-center space-y-4 bg-white pt-20 sm:pt-64 sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)] xs:[clip-path:ellipse(70%_70%_at_50%_100%)]">
           <h2
             class="rounded-4xl bg-neutral-300 px-4 py-1 text-sm"
             id="features"
@@ -109,7 +109,7 @@ export default component$(() => {
       </section>
       {/* Use cases section with 3 sample use cases if Smart Home automation with IoT  */}
       <section class="flex flex-col items-center justify-center bg-white">
-        <div class=" z-10 my-auto flex w-full flex-col items-center space-y-4 bg-emerald-50 pt-64 sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)] xs:[clip-path:ellipse(70%_70%_at_50%_100%)]">
+        <div class=" z-10 my-auto flex w-full flex-col items-center space-y-4 bg-emerald-50 pt-20 sm:pt-64 sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)] xs:[clip-path:ellipse(70%_70%_at_50%_100%)]">
           <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 text-sm">
             Use Cases
           </h2>
@@ -139,7 +139,7 @@ export default component$(() => {
         </div>
       </section>
       <section class="flex flex-col items-center justify-center">
-        <div class=" z-10 my-auto flex w-full flex-col items-center space-y-4 bg-white pt-64 sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_100%_at_50%_100%)] xs:[clip-path:ellipse(70%_70%_at_50%_100%)]">
+        <div class=" z-10 my-auto flex w-full flex-col items-center space-y-4 bg-white pt-20 sm:pt-64 sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_100%_at_50%_100%)] xs:[clip-path:ellipse(70%_70%_at_50%_100%)]">
           <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 mt-40 text-sm">
             What's New
           </h2>
@@ -149,8 +149,8 @@ export default component$(() => {
         </div>
       </section>
       <section class="flex flex-col items-center justify-center bg-white">
-        <div class=" z-10 my-auto flex w-full flex-col items-center space-y-4 bg-emerald-50 pt-64 sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)] xs:[clip-path:ellipse(70%_70%_at_50%_100%)]">
-          <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 mt-40 text-sm">
+        <div class=" z-10 my-auto flex w-full flex-col items-center space-y-4 bg-emerald-50 pt-20 sm:pt-64 sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)] xs:[clip-path:ellipse(70%_70%_at_50%_100%)]">
+          <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 mt-0 sm:mt-40 text-sm">
             Pricing
           </h2>
         </div>
@@ -160,8 +160,8 @@ export default component$(() => {
 
       </section>
       <section class="flex flex-col items-center justify-center bg-emerald-50">
-        <div class=" z-10 my-auto flex w-full flex-col items-center space-y-4 bg-white pt-64 sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)] xs:[clip-path:ellipse(70%_70%_at_50%_100%)]">
-          <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 mt-40 text-sm">
+        <div class=" z-10 my-auto flex w-full flex-col items-center space-y-4 bg-white pt-20 sm:pt-64 sm:[clip-path:ellipse(55%_80%_at_50%_100%)] md:[clip-path:ellipse(50%_90%_at_50%_100%)] xs:[clip-path:ellipse(70%_70%_at_50%_100%)]">
+          <h2 class="rounded-4xl bg-neutral-300 px-4 py-1 mt-0 sm:mt-40 text-sm">
             What our clients say
           </h2>
         </div>
