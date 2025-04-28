@@ -12,15 +12,15 @@ Our specialty is AI-driven smart home automation systems that change contemporar
         </p>
         
       </section>
-      <section class="flex min-h-screen flex-row items-center justify-around space-y-10 space-x-10 bg-emerald-50 p-4 md:flex-row">
+      <section class="flex min-h-screen flex-col sm:flex-row items-center justify-around space-y-10 sm:space-x-10 bg-emerald-50 p-4 md:flex-row">
         <img
           src="/About.webp"
           alt="Team Image"
           width={10}
           height={10}
-          class="mb-4 h-full w-1/2 rounded-full"
+          class="mb-4 h-full w-full sm:w-1/2 rounded-full"
         />
-        <p class="mt-4 h-8/12 w-1/2 px-12 text-justify text-lg font-light">
+        <p class="mt-4 h-8/12 sm:w-1/2 px-12 text-justify text-lg font-light">
         Our goal is to provide automated, customized interactions that adjust to each user's routines and preferences. Our modern technology redefines comfort and convenience in everything from lighting and climate control to surveillance and appliance management. We want to be at the forefront of smart living in the future, driven by a commitment to innovation, reliability, and client satisfaction.
         </p>
       </section>
