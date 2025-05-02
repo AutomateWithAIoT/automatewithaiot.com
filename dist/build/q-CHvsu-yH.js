@@ -1,0 +1,1 @@
+import{u as t}from"./q-BTylCS-M.js";import{f as n}from"./q-BTylCS-M.js";import{c as a}from"./q-CgBkg4fK.js";import"./q-uemlvruI.js";const u=async()=>{const[r,o,s]=t(),e=await a(s.resetCode,o.value);e.success?(alert("Password reset successful!"),r("/app/auth/Login")):s.error=e.error};export{n as _hW,u as s_wghP3zuKbT8};

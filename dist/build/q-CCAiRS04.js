@@ -1,0 +1,1 @@
+import{u as t}from"./q-BTylCS-M.js";import{f as u}from"./q-BTylCS-M.js";const c=()=>{const[s,r,e]=t();r.list=s.filter(o=>o.name.toLowerCase().includes(e.value.toLowerCase())||o.type.toLowerCase().includes(e.value.toLowerCase()))};export{u as _hW,c as s_fmTTBaJF1F0};

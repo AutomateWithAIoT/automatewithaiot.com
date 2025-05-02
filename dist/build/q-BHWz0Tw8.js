@@ -1,0 +1,1 @@
+import{u as r}from"./q-BTylCS-M.js";import{f as p}from"./q-BTylCS-M.js";import{s as o}from"./q-CgBkg4fK.js";import"./q-uemlvruI.js";const i=async()=>{const[e,a,s]=r();try{e.value=!1,await o(a.value),e.value=!0,s.value="Password reset link sent!"}catch(t){s.value=t.message}};export{p as _hW,i as s_KEZz370zGL0};

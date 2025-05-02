@@ -1,0 +1,1 @@
+import{u as c}from"./q-BTylCS-M.js";import{f as r}from"./q-BTylCS-M.js";const n=async()=>{const[a,i,o,e]=c();o.value=!0,await new Promise(s=>setTimeout(s,1e3)),e.device.name=i.value,e.device.location=a.value,o.value=!1,e.onClose$()};export{r as _hW,n as s_HJi3eFBUBsw};

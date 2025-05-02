@@ -1,0 +1,1 @@
+import{e as u,d as n,f as c,h as i,i as d}from"./q-CgBkg4fK.js";import{f as g}from"./q-BTylCS-M.js";import"./q-uemlvruI.js";const l=async(r,t)=>{try{const a=(await u(n,r,t)).user,o=c(i,"users",a.uid),e=await d(o);return e.exists()?{success:!0,user:e.data()}:{success:!1,error:"User not found"}}catch(s){return{success:!1,error:s.message}}};export{g as _hW,l as s_j0FmSaY6U3M};
