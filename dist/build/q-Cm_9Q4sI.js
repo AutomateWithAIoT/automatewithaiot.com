@@ -1,1 +1,0 @@
-import{G as t,b as o,d as u}from"./q-CgBkg4fK.js";import{f as l}from"./q-BTylCS-M.js";import"./q-uemlvruI.js";const c=async()=>{const s=new t;try{const r=(await o(u,s)).user;return{success:!0,user:{email:r.email||"",username:r.displayName||"",uid:r.uid||"",role:"user"}}}catch(e){return{success:!1,error:e.message}}};export{l as _hW,c as s_Mr1ihixrk10};

@@ -1,1 +1,0 @@
-import{u as a}from"./q-BTylCS-M.js";import{f as m}from"./q-BTylCS-M.js";import{g as t}from"./q-CgBkg4fK.js";import"./q-uemlvruI.js";const l=async()=>{const[s,o,r]=a();s.value=!1;const e=await t();s.value=!0,e.success&&e.user?(r(e.user.email,e.user.username),location.href="/app/dashboard/"):o.value=e.error};export{m as _hW,l as s_U2ExCxtMsvw};

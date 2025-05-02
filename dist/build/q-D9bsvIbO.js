@@ -1,1 +1,0 @@
-import{u as t}from"./q-BTylCS-M.js";import{f as c}from"./q-BTylCS-M.js";const i=e=>{const[a,o]=t();o.value=e,e==="1h"?a.data=[42,28,12,8,6,4]:e==="6h"?a.data=[38,32,15,5,7,3]:e==="24h"&&(a.data=[35,35,14,6,5,5])};export{c as _hW,i as s_gKbAGHRzWQg};

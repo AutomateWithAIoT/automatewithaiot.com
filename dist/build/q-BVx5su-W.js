@@ -1,1 +1,0 @@
-import{j as s,d as a}from"./q-CgBkg4fK.js";import{f as u}from"./q-BTylCS-M.js";import"./q-uemlvruI.js";const c=async r=>{try{return{success:!0,email:await s(a,r)}}catch(e){return{success:!1,error:e.message}}};export{u as _hW,c as s_Bx5PeJ1P26Q};

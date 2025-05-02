@@ -1,1 +1,0 @@
-import{u as c}from"./q-BTylCS-M.js";import{f as v}from"./q-BTylCS-M.js";const i=({track:o})=>{const[e,a]=c();o(()=>a.deviceId);const s=a.deviceId.charCodeAt(0)%5;s===0?e.values=[75,15,5,5]:s===1?e.values=[65,20,10,5]:s===2?e.values=[80,10,5,5]:s===3?e.values=[60,25,10,5]:e.values=[70,15,10,5]};export{v as _hW,i as s_D8Jy9oVnmIg};

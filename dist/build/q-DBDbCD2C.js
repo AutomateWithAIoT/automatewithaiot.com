@@ -1,1 +1,0 @@
-import{_ as o}from"./q-uemlvruI.js";import{c as t,q as r}from"./q-BTylCS-M.js";const a=t(r(()=>o(()=>import("./q-DagRwt5D.js"),[]),"s_BjvURTuAKXI")),_={title:"Forgot Password",meta:[{name:"description",content:"Reset your password"}]};export{a as default,a as forgotPassword,_ as head};

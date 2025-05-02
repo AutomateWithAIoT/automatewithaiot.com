@@ -1,1 +1,0 @@
-import{u as s}from"./q-BTylCS-M.js";import{f as m}from"./q-BTylCS-M.js";import{_auto_faqList as a}from"./q-CLCr5lJD.js";import"./q-uemlvruI.js";const l=()=>{const[o,e]=s();e.value===a.indexOf(o)?e.value=null:e.value=a.indexOf(o)};export{m as _hW,l as s_eAwYGGSI03k};

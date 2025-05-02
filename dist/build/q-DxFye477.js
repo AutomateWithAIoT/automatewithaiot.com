@@ -1,1 +1,0 @@
-import{u as t}from"./q-BTylCS-M.js";import{f as a}from"./q-BTylCS-M.js";const r=()=>{const[e]=t();e.theme=e.theme==="light"?"dark":"light",document.documentElement.classList.toggle("dark",e.theme==="dark")};export{a as _hW,r as s_Ld1p6JKyirI};

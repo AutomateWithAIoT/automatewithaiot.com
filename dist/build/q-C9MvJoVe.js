@@ -1,1 +1,0 @@
-import{u as o}from"./q-BTylCS-M.js";import{f}from"./q-BTylCS-M.js";const a=l=>{const[r,t]=o();r.value=r.value.filter(e=>e.id!==l),t.value=t.value.filter(e=>e.id!==l)};export{f as _hW,a as s_3e13IuRQlqk};

@@ -1,1 +1,0 @@
-import{u as e}from"./q-BTylCS-M.js";import{f as c}from"./q-BTylCS-M.js";const s=({cleanup:a})=>{const[o]=e(),r=setInterval(()=>{o.responseTime=`${Math.floor(Math.random()*50)+100}ms`,o.cpuUsage=`${Math.floor(Math.random()*15)+25}%`,o.memoryUsage=`${Math.floor(Math.random()*20)+35}%`},5e3);a(()=>clearInterval(r))};export{c as _hW,s as s_dcNmT5MbXyw};

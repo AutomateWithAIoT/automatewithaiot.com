@@ -1,1 +1,0 @@
-import{u as a}from"./q-BTylCS-M.js";import{f as n}from"./q-BTylCS-M.js";const s=async({track:r})=>{const[e,t,o]=a();r(o),e.value.length>0&&(t.value=e.value[o.value])};export{n as _hW,s as s_1tNj1fDQUNU};

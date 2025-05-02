@@ -1,1 +1,0 @@
-import{u as o}from"./q-BTylCS-M.js";import{f as n}from"./q-BTylCS-M.js";const a=(t,e)=>{const[s]=o();sessionStorage.setItem("email",t),sessionStorage.setItem("username",e),sessionStorage.setItem("name",e),sessionStorage.setItem("isLoggedIn","true"),s.user.email=t,s.user.username=e,s.user.isLoggedIn=!0};export{n as _hW,a as s_GYDYSi0NRVY};
